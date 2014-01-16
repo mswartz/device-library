@@ -3,11 +3,35 @@
 </head>
 
 <body>
-  {{> hello}}
+  {{> device_list}}
 </body>
 
 <template name="hello">
   <h1>Hello World!</h1>
   {{greeting}}
   <input type="button" value="Click" />
+</template>
+
+<template name="device_thumb">
+<img src="{{img_thumb}}"/>
+<h1>{{name}}</h1>
+<h3>{{os}}</h3>
+</template>
+
+<template name="device_detail">
+<img src="{{img_large}}"/>
+<h1>{{name}}</h1>
+<h3>{{os}}</h3>
+<ul>
+	<li>{{release}}</li>
+	<li>{{resolution}}</li>
+	<li>{{notes}}</li>
+	<li>{{status}}</li>
+</ul>
+</template>
+
+<template name="device_list">
+  {{#each devices}}
+  	{{> device_thumb}}
+  {{/each}}
 </template>
