@@ -18,6 +18,18 @@ if (Meteor.isClient) {
       return Devices.find({}).fetch();
     }
   });
+
+  Template.device_list.events({
+    'click .device_thumb_mod' : function() {
+      console.log(this._id);
+    }
+  });
+
+  Template.device_detail.helpers({
+    'device' : function() {
+      return Devices.find({_id: Session.get('device_selected')}).fetch();
+    }
+  });
 }
 
 if (Meteor.isServer) {

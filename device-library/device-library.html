@@ -3,7 +3,11 @@
 </head>
 
 <body>
+
+	{{> device_detail }}
+
   {{> device_list}}
+
 </body>
 
 <template name="hello">
@@ -13,12 +17,15 @@
 </template>
 
 <template name="device_thumb">
-<img src="{{img_thumb}}"/>
-<h1>{{name}}</h1>
-<h3>{{os}}</h3>
+	<div class="device_thumb_mod">
+		<img src="{{img_thumb}}"/>
+		<h1>{{name}}</h1>
+		<h3>{{os}}</h3>
+	</div>
 </template>
 
 <template name="device_detail">
+{{#each device}}
 <img src="{{img_large}}"/>
 <h1>{{name}}</h1>
 <h3>{{os}}</h3>
@@ -28,6 +35,7 @@
 	<li>{{notes}}</li>
 	<li>{{status}}</li>
 </ul>
+{{/each}}
 </template>
 
 <template name="device_list">

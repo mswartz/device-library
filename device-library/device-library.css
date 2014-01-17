@@ -1,1 +1,9 @@
 /* CSS declarations go here */
+
+.device_thumb_mod {
+	border: 1px solid #CCC;
+	width: 23%;
+	float: left;
+	padding: 10px;
+	margin: 20px;
+}
