@@ -74,18 +74,19 @@ if (Meteor.isClient) {
       Session.set('device_selected', undefined);
     }, 
     'click #checkout_submit' : function() {
-      var borrower = $('#checkout_name').val();
-      Devices.update({_id: Session.get('device_selected')}, {$set: {'borrower': borrower, 'status':'out'}});
-      Devices.update({_id: Session.get('device_selected')}, {$addToSet: {'history': borrower+' checked out the device.'}});
-      $('.checkout-form').hide();
-      $('.checkin-form').fadeIn();
-    },
-    'click #checkin_submit' : function() {
-      Devices.update({_id: Session.get('device_selected')}, {$set: {'borrower': undefined, 'status':'in'}});
-      $('.checkin-form').hide();
-      $('.checkout-form').fadeIn();
-    },
+      var device = Devices.find({_id: Session.get('device_selected')}).fetch();
 
+      if (device[0].status == 'in'){
+        var borrower = $('#checkout_name').val();
+        Devices.update({_id: Session.get('device_selected')}, {$set: {'borrower': borrower, 'status':'out'}});
+        Devices.update({_id: Session.get('device_selected')}, {$push: {'history': borrower+' checked out the device.'}});
+        $('#checkout_submit').val('Bring it back!');
+      } else {
+        $('#checkout_submit').val('Check it out!');
+        Devices.update({_id: Session.get('device_selected')}, {$set: {'borrower': null, 'status':'in'}});
+        Devices.update({_id: Session.get('device_selected')}, {$push: {'history': device[0].borrower+' brought it back.'}});
+      }
+    }
   });
 }
 

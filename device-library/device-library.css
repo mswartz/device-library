@@ -42,8 +42,6 @@ body {
 }
 
 .modal_body {
-	position: relative;
-	top: 0;
 	width: 500px;
 	padding: 20px;
 	margin: 0 auto;
