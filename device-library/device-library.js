@@ -15,7 +15,6 @@ if (Meteor.isClient) {
   Session.setDefault('device_selected', undefined);
 
   // the nav stuff
-
   Template.nav.events({
     'click .add_device' : function(){
       $('.input_modal').css('display', 'block');
@@ -24,7 +23,6 @@ if (Meteor.isClient) {
 
 
   // The 'homepage' list of devices 
-
   Template.device_list.events({
     'click .open' : function() {
       Modal(Session.get('device_selected'));
@@ -40,7 +38,6 @@ if (Meteor.isClient) {
 
 
   //Add a new device to the collection
-
   Template.device_input.events({
     'click .input_close' : function() {
       $('.input_modal').css('display', 'none');
@@ -52,15 +49,15 @@ if (Meteor.isClient) {
         return false;
       };
 
+      //fetch all the data from the inputs
       var data = {};
+      data.device_img = $('#add_img').val();
       data.device_class = $('#add_class').val();
       data.device_name = $('#add_name').val();
       data.os = $('#add_os').val();
       data.release = $('#add_release').val();
       data.res = $('#add_res').val();
       data.notes = $('#add_notes').val();
-
-      console.log(data);
 
       Meteor.call('addDevice', data);
 
@@ -110,8 +107,7 @@ if (Meteor.isServer) {
   Meteor.methods({
     addDevice: function(data){
       Devices.insert({
-        // img_thumb : '/img/img_thumb.jpg',
-        // img_large : '/img/img_large.jpg',
+        img : '/img/'+data.device_img+'.svg',
         name : data.device_name,
         class : data.device_class,
         os : data.os,
