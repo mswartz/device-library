@@ -46,7 +46,7 @@ if (Meteor.isClient) {
       $('.input_modal').css('display', 'none');
     },
     'click .input_submit' : function() {
-
+      //check to make sure all fields are filled in
       if($('#add_name').val()==='' || $('#add_os').val()==='' || $('#add_res').val()==='' || $('#add_release').val()===''){
         alert('You forgot something.');
         return false;
@@ -74,6 +74,7 @@ if (Meteor.isClient) {
     'device' : function() {
       var devices =  Devices.find({_id: Session.get('device_selected')}).fetch();
 
+      //reverse the history array so the latest thing is on top
       for (var i = 0; i<devices.length; i++){
         devices[0].history.reverse();
       }
@@ -124,15 +125,5 @@ if (Meteor.isServer) {
 
   Meteor.startup(function () {
 
-    // Devices.insert({
-    //   img_thumb : '/img/img_thumb.jpg',
-    //   img_large : '/img/img_large.jpg',
-    //   name : 'iPad',
-    //   os : 'iOS7',
-    //   resolution : '320x550',
-    //   release : '2011',
-    //   notes : 'this is a note',
-    //   status : 'in'
-    // });
   });
 }
