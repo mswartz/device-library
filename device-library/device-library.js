@@ -72,7 +72,20 @@ if (Meteor.isClient) {
     'click .close' : function() {
       Modal(Session.get('device_selected'));
       Session.set('device_selected', undefined);
-    }
+    }, 
+    'click #checkout_submit' : function() {
+      var borrower = $('#checkout_name').val();
+      Devices.update({_id: Session.get('device_selected')}, {$set: {'borrower': borrower, 'status':'out'}});
+      Devices.update({_id: Session.get('device_selected')}, {$addToSet: {'history': borrower+' checked out the device.'}});
+      $('.checkout-form').hide();
+      $('.checkin-form').fadeIn();
+    },
+    'click #checkin_submit' : function() {
+      Devices.update({_id: Session.get('device_selected')}, {$set: {'borrower': undefined, 'status':'in'}});
+      $('.checkin-form').hide();
+      $('.checkout-form').fadeIn();
+    },
+
   });
 }
 
@@ -80,14 +93,16 @@ if (Meteor.isServer) {
   Meteor.methods({
     addDevice: function(data){
       Devices.insert({
-        img_thumb : '/img/img_thumb.jpg',
-        img_large : '/img/img_large.jpg',
+        // img_thumb : '/img/img_thumb.jpg',
+        // img_large : '/img/img_large.jpg',
         name : data.device_name,
         os : data.os,
         resolution : data.res,
         release : data.release,
         notes : data.notes,
-        status : 'in'
+        status : 'in',
+        borrower: undefined,
+        history: []
       })
     }
   })

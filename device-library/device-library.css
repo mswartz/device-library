@@ -12,6 +12,10 @@ body {
 	margin: 20px;
 }
 
+.device_thumb_mod.out {
+	opacity: .5;
+}
+
 
 /* Modal stuff */
 
@@ -61,4 +65,14 @@ label {
 input, textarea {
 	width: 100%;
 	padding: 6px;
+}
+
+
+/* Checkin, checkout styles */
+.checkout-form {
+	display: block;
+}
+
+.checkin-form {
+	display: none;
 }

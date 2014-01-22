@@ -20,7 +20,7 @@
 </template>
 
 <template name="device_thumb">
-	<div class="device_thumb_mod">
+	<div class="device_thumb_mod {{status}}">
 		<img src="{{img_thumb}}"/>
 		<h1>{{name}}</h1>
 		<h3>{{os}}</h3>
@@ -42,6 +42,16 @@
 		<li>{{notes}}</li>
 		<li>{{status}}</li>
 	</ul>
+
+	<div class="checkout-form">
+		<label for="checkout_name">Who's borrowing it?</label>
+		<input type="text" id="checkout_name"/>
+		<input id="checkout_submit" type="submit" value="Check it out!"/>
+	</div>
+
+	<div class="checkin-form">
+		<input id="checkin_submit" type="submit" value="It's back."/>
+	</div>
 </div>
 </div><!-- modal -->
 {{/each}}
