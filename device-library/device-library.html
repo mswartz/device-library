@@ -1,3 +1,6 @@
+<!-- <script type="text/javascript" src="//use.typekit.net/rzo5uty.js"></script> -->
+<!-- <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
+
 <head>
   <title>device-library</title>
 </head>
@@ -5,26 +8,30 @@
 <body>
 
 {{> nav}}
-
-	{{> device_detail }}
-
-	{{> device_input }}
-
-  {{> device_list}}
-
+{{> device_detail }}
+{{> device_input }}
+{{> device_list}}
 
 </body>
+<template name="scripts">
+	{{scripts}}
+</template>
 
 <template name="nav">
-  <a class="add_device" href="#">Add Device</a>
+	<header class="header">
+	  <div class="nav-logo">Device Library</div>
+	  <div class="nav-buttons">
+		  <a class="add_device" href="#">Add Device</a>
+	  </div>
+	</header>
 </template>
 
 <template name="device_thumb">
 	<div class="device_thumb_mod {{status}}">
-		<img src="{{img_thumb}}"/>
+		<img class="resp-img" src="{{img}}"/>
 		<h1>{{name}}</h1>
 		<h3>{{os}}</h3>
-		<a href="#" class="open">Open</a>
+		{{#if borrower}}<small>({{borrower}}'s got it.)</small>{{/if}}
 	</div>
 </template>
 
@@ -35,7 +42,11 @@
 <div class="detail_modal">
 <div class="modal_body">
 	<a href="#" class="close">Close</a>
-	<img src="{{img_large}}"/>
+
+	<div class="detail-img">
+		<img class="resp-img" src="{{img}}"/>
+	</div>
+
 	<h1>{{name}}</h1>
 	<h3>{{class}}</h3>
 	<h3>{{os}}</h3>
@@ -48,9 +59,10 @@
 			<li>{{notes}}</li>
 		{{/if}}
 		{{#if borrower}}
-			<li>{{borrower}}'s got it right now.</li>
+			<li><strong>{{borrower}}</strong>'s got it right now.</li>
 		{{/if}}
 	</ul>
+
 
 	{{#unless borrower}}
 	<div class="checkout-form">
@@ -62,9 +74,10 @@
 	<input id="checkout_submit" type="submit" {{#if borrower}}value="Bring it back!"{{/if}} {{#unless borrower}}value="Check it out!"{{/unless}}/>
 
 	<div class="device_history">
+		<h4>Activity</h4>
 		<ul>
 		{{#each history}}
-			<li>{{name}} {{message}}</li>
+			<li><strong>{{name}}</strong> {{message}}</li>
 		{{/each}}
 		</ul>
 	</div>

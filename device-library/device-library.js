@@ -24,7 +24,7 @@ if (Meteor.isClient) {
 
   // The 'homepage' list of devices 
   Template.device_list.events({
-    'click .open' : function() {
+    'click .device_thumb_mod' : function() {
       Modal(Session.get('device_selected'));
       Session.set('device_selected', this._id);
     }
@@ -116,12 +116,12 @@ if (Meteor.isServer) {
         notes : data.notes,
         status : 'in',
         borrower: undefined,
-        history: []
+        history: [{'message' : 'The device was created.'}]
       })
     }
   })
 
   Meteor.startup(function () {
-
+    // Devices.remove({});
   });
 }

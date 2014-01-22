@@ -4,18 +4,6 @@ body {
 	margin: 0;
 }
 
-.device_thumb_mod {
-	border: 1px solid #CCC;
-	width: 23%;
-	float: left;
-	padding: 10px;
-	margin: 20px;
-}
-
-.device_thumb_mod.out {
-	opacity: .5;
-}
-
 
 /* Modal stuff */
 
@@ -44,9 +32,10 @@ body {
 .modal_body {
 	width: 500px;
 	padding: 20px;
-	margin: 0 auto;
+	margin: 40px auto;
 	background-color: #FFF;
 	z-index: 10000;
+	box-shadow: 0px 0px 10px #CCC;
 }
 
 
@@ -73,4 +62,97 @@ input, textarea {
 
 .checkin-form {
 	display: none;
+}
+
+
+/* Typography */
+body {
+	font-family: "Proxima Nova", "proxima-nova", "Helvetica", arial, sans-serif;
+}
+
+strong {
+	font-weight: 600;
+}
+
+h1 {
+	font-weight: 100;
+}
+h1, h2, h3, h4 {
+	margin-bottom: 5px;
+	line-height: 100%;
+}
+
+
+/* Buttons */
+input[type='submit']{
+	margin: 0 auto;
+	border: 0;
+	background-color: #93164F;
+	color: #FFF;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+input[type='submit']:hover{
+	background-color: #65082F;
+}
+/* Header styles */
+
+.header {
+	height: 100px;
+	background-color: #65082F;
+}
+
+.nav-logo {
+	width: 40%;
+	float: left;
+	padding: 20px;
+	color: #FFF;
+}
+
+.nav-buttons {
+	width: 40%;
+	float: right;
+}
+
+.add_device {
+	margin: 20px;
+	float: right;
+	padding: 20px;
+	background-color: #93164F;
+	color: #FFF;
+}
+
+/* Thumbnail Styles */
+
+.device_thumb_mod {
+	height: 250px;
+	width: 160px;
+	float: left;
+	padding: 10px;
+	margin: 20px;
+	text-align: center;
+	cursor: pointer;
+	transition: all .25s ease-in-out;
+	-webkit-transition: all .25s ease-in-out;
+}
+
+.device_thumb_mod:hover {
+	background-color: #E5E5E5;
+}
+
+.device_thumb_mod.out {
+	opacity: .5;
+}
+
+.resp-img {
+	width: 100%;
+}
+
+.detail-img {
+	float: right;
+	margin: -60px -60px 0 0;
+	width: 175px;
+	height: 175px;
 }
