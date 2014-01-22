@@ -4,16 +4,19 @@
 
 <body>
 
+{{> nav}}
+
 	{{> device_detail }}
+
+	{{> device_input }}
 
   {{> device_list}}
 
+
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="nav">
+  <a class="add_device" href="#">Add Device</a>
 </template>
 
 <template name="device_thumb">
@@ -27,8 +30,8 @@
 
 <template name="device_detail">
 {{#each device}}
-<div class="modal">
-<div class="device_detail">
+<div class="detail_modal">
+<div class="modal_body">
 	<a href="#" class="close">Close</a>
 	<img src="{{img_large}}"/>
 	<h1>{{name}}</h1>
@@ -43,6 +46,43 @@
 </div><!-- modal -->
 {{/each}}
 </template>
+
+
+<!-- interface for adding new devices -->
+<template name="device_input">
+	<div class="input_modal">
+	<div class="modal_body">
+		<a href="#" class="input_close">Close</a>
+		<img src="{{img_large}}"/>
+
+		<div class="input-row">
+			<label for="add-name">Device Name</label>
+			<input type="text" id="add_name"/>
+		</div>
+
+		<div class="input-row">
+			<label for="add-os">Device OS</label>
+			<input type="text" id="add_os"/>
+		</div>
+
+		<div class="input-row">
+			<label for="add-name">Release date</label>
+			<input type="text" id="add_release"/>
+		</div>
+
+		<div class="input-row">
+			<label for="add-name">Resolution</label>
+			<input type="text" id="add_res"/>
+		</div>
+
+		<div class="input-row">
+			<label for="add-name">Any notes?</label>
+			<textarea id="add_notes"/>
+		</div>
+	</div>
+	</div><!-- modal -->
+</template>
+
 
 <template name="device_list">
   {{#each devices}}

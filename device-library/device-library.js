@@ -2,11 +2,11 @@ Devices = new Meteor.Collection("devices");
 
 var Modal =  function(device_selected){
   if(device_selected===undefined){
-    $('.modal').removeClass('open');
-    $('.modal').addClass('closed');
+    $('.detail_modal').removeClass('open');
+    $('.detail_modal').addClass('closed');
   } else {
-    $('.modal').removeClass('closed');
-    $('.modal').addClass('open');  
+    $('.detail_modal').removeClass('closed');
+    $('.detail_modal').addClass('open');  
   }
 }
 
@@ -14,15 +14,16 @@ if (Meteor.isClient) {
 
   Session.setDefault('device_selected', undefined);
 
-  Template.hello.greeting = function () {
-    return "Welcome to device-library.";
-  };
+  // the nav stuff
 
-  Template.device_list.helpers({
-    'devices' : function() {
-      return Devices.find({}).fetch();
+  Template.nav.events({
+    'click .add_device' : function(){
+      $('.input_modal').css('display', 'block');
     }
   });
+
+
+  // The 'homepage' list of devices 
 
   Template.device_list.events({
     'click .open' : function() {
@@ -30,6 +31,24 @@ if (Meteor.isClient) {
       Session.set('device_selected', this._id);
     }
   });
+
+  Template.device_list.helpers({
+    'devices' : function() {
+      return Devices.find({}).fetch();
+    }
+  });
+
+
+  //Add a new device to the collection
+
+  Template.device_input.events({
+    'click .input_close' : function() {
+      $('.input_modal').css('display', 'none');
+    }
+  });
+
+
+  // View a device Detail modal
 
   Template.device_detail.helpers({
     'device' : function() {
