@@ -52,11 +52,14 @@
 		{{/if}}
 	</ul>
 
+	{{#unless borrower}}
 	<div class="checkout-form">
 		<label for="checkout_name">Who's borrowing it?</label>
 		<input type="text" id="checkout_name"/>
-		<input id="checkout_submit" type="submit" value="Check it out!"/>
 	</div>
+	{{/unless}}
+
+	<input id="checkout_submit" type="submit" {{#if borrower}}value="Bring it back!"{{/if}} {{#unless borrower}}value="Check it out!"{{/unless}}/>
 
 	<div class="device_history">
 		<ul>
