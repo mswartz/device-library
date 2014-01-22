@@ -28,6 +28,8 @@
 	</div>
 </template>
 
+
+
 <template name="device_detail">
 {{#each device}}
 <div class="detail_modal">
@@ -35,12 +37,16 @@
 	<a href="#" class="close">Close</a>
 	<img src="{{img_large}}"/>
 	<h1>{{name}}</h1>
+	<h3>{{class}}</h3>
 	<h3>{{os}}</h3>
 	<ul>
 		<li>{{release}}</li>
 		<li>{{resolution}}</li>
-		<li>{{notes}}</li>
 		<li>{{status}}</li>
+
+		{{#if notes}}
+			<li>{{notes}}</li>
+		{{/if}}
 		{{#if borrower}}
 			<li>{{borrower}}'s got it right now.</li>
 		{{/if}}
@@ -71,6 +77,15 @@
 	<div class="modal_body">
 		<a href="#" class="input_close">Close</a>
 		<img src="{{img_large}}"/>
+
+		<div class="input-row">
+			<select id="add_class">
+				<option value="phone">Phone</option>
+				<option value="tablet">Tablet</option>
+				<option value="desktop">Desktop</option>
+				<option value="other">Other</option>
+			</select>
+		</div>
 
 		<div class="input-row">
 			<label for="add-name">Device Name</label>

@@ -47,12 +47,13 @@ if (Meteor.isClient) {
     },
     'click .input_submit' : function() {
       //check to make sure all fields are filled in
-      if($('#add_name').val()==='' || $('#add_os').val()==='' || $('#add_res').val()==='' || $('#add_release').val()===''){
+      if($('#add_class').val()==='' || $('#add_name').val()==='' || $('#add_os').val()==='' || $('#add_res').val()==='' || $('#add_release').val()===''){
         alert('You forgot something.');
         return false;
       };
 
       var data = {};
+      data.device_class = $('#add_class').val();
       data.device_name = $('#add_name').val();
       data.os = $('#add_os').val();
       data.release = $('#add_release').val();
@@ -112,6 +113,7 @@ if (Meteor.isServer) {
         // img_thumb : '/img/img_thumb.jpg',
         // img_large : '/img/img_large.jpg',
         name : data.device_name,
+        class : data.device_class,
         os : data.os,
         resolution : data.res,
         release : data.release,
