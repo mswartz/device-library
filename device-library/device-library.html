@@ -21,20 +21,26 @@
 		<img src="{{img_thumb}}"/>
 		<h1>{{name}}</h1>
 		<h3>{{os}}</h3>
+		<a href="#" class="open">Open</a>
 	</div>
 </template>
 
 <template name="device_detail">
 {{#each device}}
-<img src="{{img_large}}"/>
-<h1>{{name}}</h1>
-<h3>{{os}}</h3>
-<ul>
-	<li>{{release}}</li>
-	<li>{{resolution}}</li>
-	<li>{{notes}}</li>
-	<li>{{status}}</li>
-</ul>
+<div class="modal">
+<div class="device_detail">
+	<a href="#" class="close">Close</a>
+	<img src="{{img_large}}"/>
+	<h1>{{name}}</h1>
+	<h3>{{os}}</h3>
+	<ul>
+		<li>{{release}}</li>
+		<li>{{resolution}}</li>
+		<li>{{notes}}</li>
+		<li>{{status}}</li>
+	</ul>
+</div>
+</div><!-- modal -->
 {{/each}}
 </template>
 

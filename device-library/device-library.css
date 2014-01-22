@@ -1,4 +1,8 @@
 /* CSS declarations go here */
+body {
+	padding: 0;
+	margin: 0;
+}
 
 .device_thumb_mod {
 	border: 1px solid #CCC;
@@ -6,4 +10,24 @@
 	float: left;
 	padding: 10px;
 	margin: 20px;
+}
+
+.modal {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	z-index: 1000;
+	background-color: rgba(0,0,0,.8);
+}
+
+.device_detail {
+	position: relative;
+	top: 0;
+	width: 500px;
+	padding: 20px;
+	margin: 0 auto;
+	background-color: #FFF;
+	z-index: 10000;
 }
