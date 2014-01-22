@@ -44,6 +44,18 @@ if (Meteor.isClient) {
   Template.device_input.events({
     'click .input_close' : function() {
       $('.input_modal').css('display', 'none');
+    },
+    'click .input_submit' : function() {
+      var data = {};
+      data.device_name = $('#add_name').val();
+      data.os = $('#add_os').val();
+      data.release = $('#add_release').val();
+      data.res = $('#add_res').val();
+      data.notes = $('#add_notes').val();
+
+      console.log(data);
+
+      Meteor.call('addDevice', data);
     }
   });
 
@@ -65,6 +77,21 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
+  Meteor.methods({
+    addDevice: function(data){
+      Devices.insert({
+        img_thumb : '/img/img_thumb.jpg',
+        img_large : '/img/img_large.jpg',
+        name : data.device_name,
+        os : data.os,
+        resolution : data.res,
+        release : data.release,
+        notes : data.notes,
+        status : 'in'
+      })
+    }
+  })
+
   Meteor.startup(function () {
 
     // Devices.insert({
