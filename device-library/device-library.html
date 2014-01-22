@@ -48,6 +48,14 @@
 		<input type="text" id="checkout_name"/>
 		<input id="checkout_submit" type="submit" value="Check it out!"/>
 	</div>
+
+	<div class="device_history">
+		<ul>
+		{{#each history}}
+			<li>{{name}} {{message}}</li>
+		{{/each}}
+		</ul>
+	</div>
 </div>
 </div><!-- modal -->
 {{/each}}
