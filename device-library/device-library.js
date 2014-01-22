@@ -46,6 +46,12 @@ if (Meteor.isClient) {
       $('.input_modal').css('display', 'none');
     },
     'click .input_submit' : function() {
+
+      if($('#add_name').val()==='' || $('#add_os').val()==='' || $('#add_res').val()==='' || $('#add_release').val()===''){
+        alert('You forgot something.');
+        return false;
+      };
+
       var data = {};
       data.device_name = $('#add_name').val();
       data.os = $('#add_os').val();
@@ -56,6 +62,8 @@ if (Meteor.isClient) {
       console.log(data);
 
       Meteor.call('addDevice', data);
+
+      $('.input_modal').fadeOut();
     }
   });
 
