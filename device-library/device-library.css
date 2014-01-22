@@ -205,6 +205,7 @@ input[type='submit']:hover{
 
 .device-checkout {
 	padding: 0 0 10px 0;
+	height: 60px;
 	border-bottom: 1px solid #EDEDED;
 }
 
@@ -213,8 +214,14 @@ input[type='submit']:hover{
 	float: left;
 }
 
+#checkout_name {
+	font-size: 14px;
+	height: 24px;
+}
+
 #checkout_submit {
-	width: 30%;
+	width: 35%;
+	height: 40px;
 	float: right;
 }
 
