@@ -19,7 +19,7 @@
 
 <template name="nav">
 	<header class="header">
-	  <div class="nav-logo">Device Library</div>
+	  <div class="nav-logo"><h2 class="logo">Device Library</h2></div>
 	  <div class="nav-buttons">
 		  <a class="add_device" href="#">Add Device</a>
 	  </div>
@@ -49,10 +49,10 @@
 
 	<div class="device-info">
 		<h1>{{name}}</h1>
-		<h4 class="info"><strong>OS:</strong> {{os}}<br/>
-		<strong>Released:</strong> {{release}}<br/>
-		<strong>Resolution:</strong> {{resolution}}<br/>
-		<strong>Status:</strong> checked {{status}}</h4>
+		<h4 class="info"><strong>OS .................</strong> {{os}}<br/>
+		<strong>Released ......</strong> {{release}}<br/>
+		<strong>Resolution ....</strong> {{resolution}}<br/>
+		<strong>Status ...........</strong> checked {{status}}</h4>
 
 		{{#if notes}}
 			<p class="notes">{{notes}}</p>
@@ -149,7 +149,7 @@
 		</div>
 
 		<div class="input-row">
-			<a href="#" class="input_submit">Submit</a>
+			<input type="submit" id="input_submit" value="Submit"/>
 		</div>
 	</div>
 	</div><!-- modal -->

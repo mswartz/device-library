@@ -39,7 +39,7 @@ if (Meteor.isClient) {
 
   //Add a new device to the collection
   Template.device_input.events({
-    'click .input_modal' : function() {
+    'click .input_close' : function() {
       $('.input_modal').css('display', 'none');
     },
     'change #add_img' : function(){
@@ -47,7 +47,7 @@ if (Meteor.isClient) {
       $('.placeholder').remove();
       $('.input_img').attr('src','/img/'+img+'.svg'); 
     },
-    'click .input_submit' : function() {
+    'click #input_submit' : function() {
       //check to make sure all fields are filled in
       if($('#add_class').val()==='' || $('#add_name').val()==='' || $('#add_os').val()==='' || $('#add_res').val()==='' || $('#add_release').val()===''){
         alert('You forgot something.');
