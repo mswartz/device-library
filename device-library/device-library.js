@@ -39,8 +39,13 @@ if (Meteor.isClient) {
 
   //Add a new device to the collection
   Template.device_input.events({
-    'click .input_close' : function() {
+    'click .input_modal' : function() {
       $('.input_modal').css('display', 'none');
+    },
+    'change #add_img' : function(){
+      var img = $('#add_img').val();
+      $('.placeholder').remove();
+      $('.input_img').attr('src','/img/'+img+'.svg'); 
     },
     'click .input_submit' : function() {
       //check to make sure all fields are filled in

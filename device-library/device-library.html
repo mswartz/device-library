@@ -47,35 +47,36 @@
 		<img class="resp-img" src="{{img}}"/>
 	</div>
 
-	<h1>{{name}}</h1>
-	<h3>{{class}}</h3>
-	<h3>{{os}}</h3>
-	<ul>
-		<li>{{release}}</li>
-		<li>{{resolution}}</li>
-		<li>{{status}}</li>
+	<div class="device-info">
+		<h1>{{name}}</h1>
+		<h4 class="info"><strong>OS:</strong> {{os}}<br/>
+		<strong>Released:</strong> {{release}}<br/>
+		<strong>Resolution:</strong> {{resolution}}<br/>
+		<strong>Status:</strong> checked {{status}}</h4>
 
 		{{#if notes}}
-			<li>{{notes}}</li>
+			<p class="notes">{{notes}}</p>
 		{{/if}}
-		{{#if borrower}}
-			<li><strong>{{borrower}}</strong>'s got it right now.</li>
-		{{/if}}
-	</ul>
-
-
-	{{#unless borrower}}
-	<div class="checkout-form">
-		<label for="checkout_name">Who's borrowing it?</label>
-		<input type="text" id="checkout_name"/>
 	</div>
-	{{/unless}}
 
-	<input id="checkout_submit" type="submit" {{#if borrower}}value="Bring it back!"{{/if}} {{#unless borrower}}value="Check it out!"{{/unless}}/>
 
-	<div class="device_history">
+	<div class="device-checkout">
+		<h4>Checkout center</h4>
+		
+		<div class="checkout-form">
+			{{#unless borrower}}<input type="text" placeholder="Who's borrowing it?" id="checkout_name"/>{{/unless}}
+			{{#if borrower}}<p>{{borrower}}'s running around with it</p>{{/if}}
+		</div>
+		
+
+		<input id="checkout_submit" type="submit" {{#if borrower}}value="Bring it back!"{{/if}} {{#unless borrower}}value="Check it out!"{{/unless}}/>
+
+		<div style="clear: both"></div>
+	</div>
+
+	<div class="device-history">
 		<h4>Activity</h4>
-		<ul>
+		<ul class="history-list">
 		{{#each history}}
 			<li><strong>{{name}}</strong> {{message}}</li>
 		{{/each}}
@@ -92,10 +93,15 @@
 	<div class="input_modal">
 	<div class="modal_body">
 		<a href="#" class="input_close">Close</a>
-		<img src="{{img_large}}"/>
+		
+		<div class="detail-img">
+			<img class="input_img resp-img" src="{{img}}"/>
+		</div>
+
 
 		<div class="input-row">
 			<select id="add_img">
+				<option value="0" class="placeholder" selected="selected">Select an art!</option>
 				<option value="iphone">iPhone</option>
 				<option value="android">Android</option>
 				<option value="blackberry">Blackberry</option>

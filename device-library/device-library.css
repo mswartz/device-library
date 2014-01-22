@@ -14,7 +14,7 @@ body {
 	top: 0;
 	bottom: 0;
 	z-index: 1000;
-	background-color: rgba(255,255,255,.8);
+	background-color: rgba(0,0,0,.8);
 }
 
 .input_modal {
@@ -35,7 +35,7 @@ body {
 	margin: 40px auto;
 	background-color: #FFF;
 	z-index: 10000;
-	box-shadow: 0px 0px 10px #CCC;
+	box-shadow: 0px 0px 100px #000;
 }
 
 
@@ -79,19 +79,38 @@ h1 {
 }
 h1, h2, h3, h4 {
 	margin-bottom: 5px;
-	line-height: 100%;
+	line-height: 120%;
+}
+
+.info {
+	font-weight: normal;
 }
 
 
 /* Buttons */
+
+.close, .input_close {
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	background-color: #65082F;
+	position: absolute;
+	margin-top: -30px;
+	margin-left: -30px;
+	background-image: url(/img/x.svg);
+	background-size: 70%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-indent: -10000px;
+}
+
 input[type='submit']{
 	margin: 0 auto;
 	border: 0;
 	background-color: #93164F;
 	color: #FFF;
-	font-size: 16px;
+	font-size: 14px;
 	cursor: pointer;
-	border-radius: 4px;
 }
 
 input[type='submit']:hover{
@@ -146,13 +165,57 @@ input[type='submit']:hover{
 	opacity: .5;
 }
 
+
+
+/* Detail styles */
+
+.device-history {
+
+}
+
+.history-list {
+	height: 200px;
+	overflow-y: scroll;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.history-list li {
+	padding: 8px 0;
+	border-bottom: 1px solid #EDEDED;
+	color: #CCC;
+}
+
+.device-info {
+	padding: 0 0 10px 0;
+	border-bottom: 1px solid #EDEDED;
+}
+
+.device-checkout {
+	padding: 0 0 10px 0;
+	border-bottom: 1px solid #EDEDED;
+}
+
+.checkout-form {
+	width: 60%;
+	float: left;
+}
+
+#checkout_submit {
+	width: 30%;
+	float: right;
+}
+
+/* Image styles */
+
 .resp-img {
 	width: 100%;
 }
 
 .detail-img {
 	float: right;
-	margin: -60px -60px 0 0;
-	width: 175px;
-	height: 175px;
+	margin: -30px -80px 0 0;
+	width: 200px;
+	height: 200px;
 }
