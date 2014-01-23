@@ -46,9 +46,9 @@ if (Meteor.isClient) {
       $('.inputs').hide();
       $('.art-chooser').fadeIn();
     },
-    'click .art-thumb' : function() {
-      var img = $(this).src();
-      alert(img);
+    'click .art-thumb img' : function() {
+      var img = $(this).attr('src');
+      console.log(img);
     },
     'change #add_img' : function(){
       var img = $('#add_img').val();
