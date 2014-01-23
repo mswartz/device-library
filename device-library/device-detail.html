@@ -1,0 +1,49 @@
+<template name="device_detail">
+{{#each device}}
+<div class="detail_modal">
+<div class="modal_body">
+	<a href="#" class="close">Close</a>
+
+	<div class="detail-img">
+		<img class="resp-img" src="{{img}}"/>
+	</div>
+
+	<div class="device-info">
+		<h1>{{name}}</h1>
+		<h4 class="info"><strong>OS .................</strong> {{os}}<br/>
+		<strong>Released ......</strong> {{release}}<br/>
+		<strong>Resolution ....</strong> {{resolution}}<br/>
+		<strong>Status ...........</strong> checked {{status}}</h4>
+
+		{{#if notes}}
+			<p class="notes">{{notes}}</p>
+		{{/if}}
+	</div>
+
+
+	<div class="device-checkout">
+		<h4>Checkout center</h4>
+		
+		<div class="checkout-form">
+			{{#unless borrower}}<input type="text" placeholder="Who's borrowing it?" id="checkout_name"/>{{/unless}}
+			{{#if borrower}}<p>{{borrower}}'s running around with it</p>{{/if}}
+		</div>
+		
+
+		<input id="checkout_submit" type="submit" {{#if borrower}}value="Bring it back!"{{/if}} {{#unless borrower}}value="Check it out!"{{/unless}}/>
+
+		<div style="clear: both"></div>
+	</div>
+
+	<div class="device-history">
+		<h4>Activity</h4>
+		<ul class="history-list">
+		{{#each history}}
+			<li><strong>{{name}}</strong> {{message}}</li>
+		{{/each}}
+		</ul>
+	</div>
+</div>
+</div><!-- modal -->
+{{/each}}
+</template>
