@@ -42,6 +42,14 @@ if (Meteor.isClient) {
     'click .input_close' : function() {
       $('.input_modal').css('display', 'none');
     },
+    'click #choose-art' : function() {
+      $('.inputs').hide();
+      $('.art-chooser').fadeIn();
+    },
+    'click .art-thumb' : function() {
+      var img = $(this).src();
+      alert(img);
+    },
     'change #add_img' : function(){
       var img = $('#add_img').val();
       $('.placeholder').remove();
