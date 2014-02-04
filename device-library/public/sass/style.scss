@@ -1,0 +1,109 @@
+@import "base";
+
+$maroon : #65082F;
+$maroon-drk : #93164F;
+
+
+
+/* Modal styles and things */
+
+.detail-modal {
+	width: 100%;
+	opacity: 0;
+	position: absolute;
+	@include trans(.3s);
+
+	&.visible {
+		opacity: 1;
+	}
+}
+
+.input-modal {
+	display: none;
+}
+
+.modal-body {
+	width: 50%;
+	margin: 0 auto;
+	z-index: 1000;
+}
+
+.home {
+	@include trans;
+
+	&.no-mode {
+		.device_thumb_mod {
+			@include scale(1);
+		}
+	}
+
+	&.detail, &.input, &.invisible {
+		.device_thumb_mod {
+			@include scale(0);
+		}
+	}
+}
+
+
+
+
+/* Typography */
+body {
+	font-family: "Proxima Nova", "proxima-nova", "Helvetica", arial, sans-serif;
+}
+
+strong {
+	font-weight: 600;
+}
+
+h1 {
+	font-weight: 100;
+}
+h1, h2, h3, h4 {
+	margin-bottom: 5px;
+	line-height: 120%;
+}
+
+.logo {
+	font-weight: 100;
+	font-size: 40px;
+	line-height: 0;
+}
+
+.info {
+	font-weight: normal;
+	color: #000;
+}
+
+.info strong {
+	color: #CCC;
+}
+
+
+/* Header styles */
+
+.header {
+	height: 100px;
+	background-color: $maroon;
+}
+
+.nav-logo {
+	width: 40%;
+	float: left;
+	padding: 20px;
+	color: #FFF;
+}
+
+.nav-buttons {
+	width: 40%;
+	float: right;
+}
+
+.add_device {
+	margin: 20px;
+	float: right;
+	padding: 20px;
+	background-color: $maroon-drk;
+	color: #FFF;
+}
+

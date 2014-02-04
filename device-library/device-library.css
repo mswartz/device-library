@@ -7,7 +7,7 @@ body {
 
 /* Modal stuff */
 
-.detail_modal, .input_modal {
+/*.detail_modal, .input_modal {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -37,7 +37,7 @@ body {
 	background-color: #FFF;
 	z-index: 10000;
 	box-shadow: 0px 0px 100px #000;
-}
+}*/
 
 
 /* Input styling */
@@ -85,42 +85,12 @@ input, textarea {
 }
 
 
-/* Typography */
-body {
-	font-family: "Proxima Nova", "proxima-nova", "Helvetica", arial, sans-serif;
-}
 
-strong {
-	font-weight: 600;
-}
-
-h1 {
-	font-weight: 100;
-}
-h1, h2, h3, h4 {
-	margin-bottom: 5px;
-	line-height: 120%;
-}
-
-.logo {
-	font-weight: 100;
-	font-size: 40px;
-	line-height: 0;
-}
-
-.info {
-	font-weight: normal;
-	color: #000;
-}
-
-.info strong {
-	color: #CCC;
-}
 
 
 /* Buttons */
 
-.close, .input_close {
+/*.close, .input_close {
 	width: 30px;
 	height: 30px;
 	border-radius: 30px;
@@ -133,7 +103,7 @@ h1, h2, h3, h4 {
 	background-position: center center;
 	background-repeat: no-repeat;
 	text-indent: -10000px;
-}
+}*/
 
 input[type='submit']{
 	margin: 0 auto;
@@ -149,32 +119,7 @@ input[type='submit']:hover{
 }
 
 
-/* Header styles */
 
-.header {
-	height: 100px;
-	background-color: #65082F;
-}
-
-.nav-logo {
-	width: 40%;
-	float: left;
-	padding: 20px;
-	color: #FFF;
-}
-
-.nav-buttons {
-	width: 40%;
-	float: right;
-}
-
-.add_device {
-	margin: 20px;
-	float: right;
-	padding: 20px;
-	background-color: #93164F;
-	color: #FFF;
-}
 
 /* Thumbnail Styles */
 

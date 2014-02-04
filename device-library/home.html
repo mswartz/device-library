@@ -5,7 +5,11 @@
 <body>
 
 {{> nav}}
+
+<div class="detail-modal">
 {{> device_detail }}
+</div>
+
 {{> device_input }}
 {{> device_list}}
 
@@ -35,7 +39,9 @@
 
 
 <template name="device_list">
-  {{#each devices}}
-  	{{> device_thumb}}
-  {{/each}}
+	<div class="home {{mode}}">
+	  {{#each devices}}
+	  	{{> device_thumb}}
+	  {{/each}}
+	</div>
 </template>
