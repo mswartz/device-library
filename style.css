@@ -354,6 +354,27 @@ button {
   margin-bottom: 10px;
 }
 
+.input-row {
+  *zoom: 1;
+}
+.input-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.label {
+  font-weight: 700;
+  width: 25%;
+  margin: 0 0 5% 0;
+  float: left;
+}
+
+.sidesaddle {
+  width: 70%;
+  float: right;
+}
+
 .input-display {
   width: 100%;
   padding: 10px;
@@ -370,6 +391,9 @@ button {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 15px;
+}
+.close:hover {
+  background-size: 13px;
 }
 
 /* Typography */
@@ -441,7 +465,7 @@ h1, h2, h3, h4 {
 .ups-logo {
   cursor: pointer;
   height: 40px;
-  background-image: url("img/upstatement-white.svg");
+  background-image: url("img/devices.svg");
   background-repeat: no-repeat;
   background-position: center center;
   text-indent: -10000px;
@@ -471,6 +495,9 @@ h1, h2, h3, h4 {
   background-color: #93164f;
   color: #FFF;
 }
+.add_device:hover {
+  background-size: 17px;
+}
 
 /* Detail modal */
 .section {
@@ -484,6 +511,52 @@ h1, h2, h3, h4 {
 .history-list li {
   padding: 10px 0;
   border-bottom: 1px solid #EEE;
+}
+
+/* Input Modal */
+.detail-img {
+  position: relative;
+}
+
+.left-arrow, .right-arrow {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+  background-color: #EEE;
+  position: relative;
+  top: -155px;
+}
+.left-arrow:hover, .right-arrow:hover {
+  background-color: #CCC;
+}
+
+.left-arrow {
+  float: left;
+  margin-left: -15px;
+  background-image: url("img/leftarrow.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 15px;
+}
+.left-arrow:hover {
+  background-size: 13px;
+}
+
+.right-arrow {
+  float: right;
+  margin-right: -15px;
+  background-image: url("img/rightarrow.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 15px;
+}
+.right-arrow:hover {
+  background-size: 13px;
 }
 
 /* Home page */

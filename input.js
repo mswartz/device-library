@@ -35,11 +35,20 @@ if (Meteor.isClient) {
       displayChange();
     },
     //cycle through images
-    'click .input_img' : function(){
-      if(i<limit){
+    'click .left-arrow' : function(){
+      if(i>0){
+        i--;
         $('.input_img').attr('src', '/img/device'+i+'.svg');
+      } else if(i==0){
+        i = limit;
+        $('.input_img').attr('src', '/img/device'+i+'.svg');
+      }
+    },
+    'click .right-arrow' : function(){
+      if(i<limit){
         i++;
-      } else {
+        $('.input_img').attr('src', '/img/device'+i+'.svg');
+      } else if(i==limit){
         i = 0;
         $('.input_img').attr('src', '/img/device'+i+'.svg');
       }
