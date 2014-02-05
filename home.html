@@ -1,0 +1,47 @@
+<head>
+  <title>Device Library</title>
+</head>
+
+<body>
+
+{{> nav}}
+
+<div class="detail-modal">
+{{> device_detail }}
+</div>
+
+{{> device_input }}
+{{> device_list}}
+
+</body>
+<template name="scripts">
+	{{scripts}}
+</template>
+
+<template name="nav">
+	<header class="header">
+	  <div class="ups-logo">Upstatement</div>
+	  <div class="nav-buttons">
+		  <a class="add_device" href="#">Add Device</a>
+	  </div>
+	</header>
+</template>
+
+
+<template name="device_thumb">
+	<div class="device-thumb-mod media-block {{status}}">
+		<img class="resp-img" src="{{img}}"/>
+		<h1 class="h2">{{name}}</h1>
+		<h3 class="h3">{{os}}</h3>
+		{{#if borrower}}<small>({{borrower}}'s got it.)</small>{{/if}}
+	</div>
+</template>
+
+
+<template name="device_list">
+	<div class="home {{mode}}">
+	  {{#each devices}}
+	  	{{> device_thumb}}
+	  {{/each}}
+	</div>
+</template>
