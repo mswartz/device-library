@@ -1,11 +1,39 @@
 
+// Doubling this up because scope. Not ideal.
+
+var displayChange = function(){
+  if (Session.get('mode') == undefined) {
+
+    $('.home').addClass('visible');
+    $('.detail-modal').removeClass('visible');
+    $('.input-modal').removeClass('visible');
+
+  } else if(Session.get('mode') == 'detail') {
+
+    $('.home').removeClass('visible');
+    $('.detail-modal').addClass('visible');
+    $('.input-modal').removeClass('visible');
+
+  } else if (Session.get('mode') == 'input') {
+
+    $('.home').removeClass('visible');
+    $('.detail-modal').removeClass('visible');
+    $('.input-modal').addClass('visible');
+
+  }
+}
+
 if (Meteor.isClient) {
     //vars for art chooser
     var i = 0;
     var limit = 10;
 
-  //Add a new device to the collection
+  
   Template.device_input.events({
+    'click .close' : function(){
+      Session.set('mode', undefined);
+      displayChange();
+    },
     //cycle through images
     'click .input_img' : function(){
       if(i<limit){
@@ -38,8 +66,8 @@ if (Meteor.isClient) {
       Meteor.call('addDevice', data);
 
       //close the modal (maybe add success someday?)
-      $('.input-modal').css('display', 'none');
-      $('.home').removeClass('detail');
+      Session.set('mode', undefined);
+      displayChange();
     }
   });
 }

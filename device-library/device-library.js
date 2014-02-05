@@ -1,38 +1,46 @@
 Devices = new Meteor.Collection("devices");
 
-var displayDetail = function(device_selected){
-  // console.log(Session.get('device_selected'));
+var displayChange = function(){
+  if (Session.get('mode') == undefined) {
 
-  if (device_selected!= undefined) {
-    $('.detail-modal').addClass('visible');
-    // $('.home').addClass('invisible');
-  } else {
+    $('.home').addClass('visible');
     $('.detail-modal').removeClass('visible');
-    // $('.home').removeClass('invisible');
+    $('.input-modal').removeClass('visible');
+
+  } else if(Session.get('mode') == 'detail') {
+
+    $('.home').removeClass('visible');
+    $('.detail-modal').addClass('visible');
+    $('.input-modal').removeClass('visible');
+
+  } else if (Session.get('mode') == 'input') {
+
+    $('.home').removeClass('visible');
+    $('.detail-modal').removeClass('visible');
+    $('.input-modal').addClass('visible');
+
   }
 }
 
 
 if (Meteor.isClient) {
-
   Session.setDefault('device_selected', undefined);
   Session.setDefault('mode', undefined);
 
   // the nav stuff
   Template.nav.events({
     'click .add_device' : function(){
-      $('.input-modal').css('display', 'block');
-      $('.home').addClass('detail');
+      Session.set('mode', 'input');
+      displayChange();
     }
   });
 
   // The 'homepage' list of devices 
   Template.device_list.events({
     'click .device_thumb_mod' : function() {
-
       Session.set('device_selected', this._id);
       Session.set('mode', 'detail');
-      displayDetail(Session.get('device_selected'));
+      displayChange();
     }
   });
 
@@ -40,6 +48,7 @@ if (Meteor.isClient) {
     'devices' : function() {
       return Devices.find({}).fetch();
     },
+    //using this to put a class on the home div
     'mode' : function() {
       if (Session.get('mode') == 'detail'){
         return 'detail';
@@ -54,7 +63,6 @@ if (Meteor.isClient) {
 
 
   // View a device Detail modal
-
   Template.device_detail.helpers({
     'device' : function() {
       var devices =  Devices.find({_id: Session.get('device_selected')}).fetch();
@@ -72,7 +80,7 @@ if (Meteor.isClient) {
     'click .close' : function() {
       Session.set('device_selected', undefined);
       Session.set('mode', undefined);
-      displayDetail(Session.get('device_selected'));
+      displayChange();
     }, 
     'click #checkout_submit' : function() {
       var device = Devices.find({_id: Session.get('device_selected')}).fetch();

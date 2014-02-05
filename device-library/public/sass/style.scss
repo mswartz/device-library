@@ -20,6 +20,10 @@ $maroon-drk : #93164F;
 
 .input-modal {
 	display: none;
+
+	&.visible {
+		display: block;
+	}
 }
 
 .modal-body {

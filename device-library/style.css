@@ -293,6 +293,9 @@ button {
 .input-modal {
   display: none;
 }
+.input-modal.visible {
+  display: block;
+}
 
 .modal-body {
   width: 50%;
