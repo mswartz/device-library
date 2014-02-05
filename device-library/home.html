@@ -29,10 +29,10 @@
 
 
 <template name="device_thumb">
-	<div class="device_thumb_mod {{status}}">
+	<div class="device-thumb-mod media-block {{status}}">
 		<img class="resp-img" src="{{img}}"/>
-		<h1>{{name}}</h1>
-		<h3>{{os}}</h3>
+		<h1 class="h2">{{name}}</h1>
+		<h3 class="h3">{{os}}</h3>
 		{{#if borrower}}<small>({{borrower}}'s got it.)</small>{{/if}}
 	</div>
 </template>

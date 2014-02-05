@@ -37,7 +37,7 @@ if (Meteor.isClient) {
 
   // The 'homepage' list of devices 
   Template.device_list.events({
-    'click .device_thumb_mod' : function() {
+    'click .device-thumb-mod' : function() {
       Session.set('device_selected', this._id);
       Session.set('mode', 'detail');
       displayChange();
