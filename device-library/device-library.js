@@ -32,7 +32,12 @@ if (Meteor.isClient) {
     'click .add_device' : function(){
       Session.set('mode', 'input');
       displayChange();
+    },
+    'click .ups-logo' : function(){
+      Session.set('mode', undefined);
+      displayChange();
     }
+
   });
 
   // The 'homepage' list of devices 

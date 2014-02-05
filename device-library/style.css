@@ -360,6 +360,18 @@ button {
   margin-bottom: 10px;
 }
 
+.close {
+  text-indent: -10000px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #93164f;
+  background-image: url("img/x.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+}
+
 /* Typography */
 body {
   font-family: "Proxima Nova", "proxima-nova", "Helvetica", arial, sans-serif;
@@ -396,10 +408,6 @@ h1, h2, h3, h4 {
   margin-bottom: 20px;
 }
 
-.gray {
-  color: #eeeeee;
-}
-
 .heading {
   text-align: center;
   border-bottom: 1px solid #CCC;
@@ -426,14 +434,21 @@ h1, h2, h3, h4 {
 
 /* Header styles */
 .header {
-  height: 100px;
+  height: 60px;
   background-color: #1d1d1d;
 }
 
-.nav-logo {
-  width: 40%;
+.ups-logo {
+  cursor: pointer;
+  height: 40px;
+  background-image: url("img/upstatement-white.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-indent: -10000px;
+  width: 150px;
   float: left;
-  padding: 20px;
+  padding: 10px;
+  margin: 10px;
   color: #FFF;
 }
 
@@ -443,9 +458,16 @@ h1, h2, h3, h4 {
 }
 
 .add_device {
-  margin: 20px;
+  height: 40px;
+  width: 40px;
+  background-image: url("img/add.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 15px;
+  text-indent: -10000px;
+  margin: 10px;
   float: right;
-  padding: 20px;
+  padding: 10px;
   background-color: #93164f;
   color: #FFF;
 }
@@ -543,4 +565,7 @@ h1, h2, h3, h4 {
   width: 100%;
   cursor: pointer;
   margin-bottom: 30px;
+}
+.device-thumb-mod.out {
+  opacity: .25;
 }
