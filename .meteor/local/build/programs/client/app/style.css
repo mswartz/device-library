@@ -543,6 +543,7 @@ html {
   background-image: url(img/blur-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -649,17 +650,21 @@ Objects and Universal
 }
 
 .btn {
-  color: #FFF;
+  color: #000;
   display: block;
   margin: 0 auto;
-  padding: 10px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  border-radius: 8px;
-  border: 1px solid #EEE;
-  background-color: #93164f;
+  padding: 15px;
+  border: 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(#ffffff, #cccccc);
+  background-image: -moz-linear-gradient(#ffffff, #cccccc);
+  background-image: -o-linear-gradient(#ffffff, #cccccc);
+  background-image: linear-gradient(#ffffff, #cccccc);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
   outline: none;
 }
 
@@ -1030,10 +1035,11 @@ Footer
 
 .footer-text {
   margin: 20px 0 0 0;
+  padding: 0 0 60px 0;
   text-align: center;
-  color: #666;
+  color: #CCC;
 }
 .footer-text a {
   text-decoration: none;
-  color: #CCC;
+  color: #FFF;
 }

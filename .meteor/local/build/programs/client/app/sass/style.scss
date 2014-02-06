@@ -11,6 +11,7 @@ html {
 	background-image: url(img/blur-bg.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-attachment: fixed;
 	@include background-size(cover);
 }
 
@@ -27,6 +28,7 @@ html {
 }
 
 .section {
+
 }
 
 .device-thumb-mod img {
@@ -105,13 +107,13 @@ Objects and Universal
 }
 
 .btn {
-	color: #FFF;
+	color: #000;
 	display: block;	
 	margin: 0 auto;
-	padding: 10px;
-	@include border-radius(8px);
-	border: 1px solid #EEE;
-	background-color: $accent;
+	padding: 15px;
+	border: 0;
+	@include background-image(linear-gradient(#FFF, #CCC));
+	@include border-radius(6px);
 	outline: none;
 }
 
@@ -436,12 +438,13 @@ Footer
 
 .footer-text {
 	margin: 20px 0 0 0;
+	padding: 0 0 60px 0;
 	text-align: center;
-	color: #666;
+	color: #CCC;
 
 	a {
 		text-decoration: none;
-		color: #CCC;
+		color: #FFF;
 	}
 }
 
