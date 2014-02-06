@@ -2,3 +2,5 @@ design/*
 design*
 public/bower_components
 public/sass
+.sass-cache
+.sass-cache/
