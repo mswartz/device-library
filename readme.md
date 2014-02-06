@@ -41,4 +41,7 @@ Note that it INCLUDES the `http://`, it didn't work until I added this. Thanks S
 - [ ] Make device art
 
 #### Functionality
+- [ ] Router for permalinking to devices by name eg: `/iPhone-4s`
 - [ ] Security around adding devices (how to make this public but prevent abuse)
+- [ ] Some kind of admin-mode or way to delete stuff, again securely
+- [ ] A way to edit devices, again, securely
