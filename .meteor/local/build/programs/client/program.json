@@ -353,22 +353,13 @@
       "hash": "fbb54e05f02190869755c48bbc5e3bd9f17811b4"
     },
     {
-      "path": "app/template.device-detail.js",
+      "path": "app/template.detail.js",
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/template.device-detail.js?f2b3571b470daab387b39e16138df8e9968cd169",
+      "url": "/template.detail.js?f2b3571b470daab387b39e16138df8e9968cd169",
       "size": 2140,
       "hash": "f2b3571b470daab387b39e16138df8e9968cd169"
-    },
-    {
-      "path": "app/template.device-input.js",
-      "where": "client",
-      "type": "js",
-      "cacheable": true,
-      "url": "/template.device-input.js?c127e13bc9092897c473513c235215978c6f3efc",
-      "size": 1822,
-      "hash": "c127e13bc9092897c473513c235215978c6f3efc"
     },
     {
       "path": "app/template.home.js",
@@ -380,22 +371,13 @@
       "hash": "61532e35af04e293d1c26f028f86f9e9a7c3c3a0"
     },
     {
-      "path": "app/device-library.js",
+      "path": "app/template.input.js",
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/device-library.js?ffa9178f91c6bc4f77ad0d60a26827d8687dd708",
-      "size": 3567,
-      "hash": "ffa9178f91c6bc4f77ad0d60a26827d8687dd708"
-    },
-    {
-      "path": "app/functions.js",
-      "where": "client",
-      "type": "js",
-      "cacheable": true,
-      "url": "/functions.js?23f7dcbc54aa1ebb7ef433df64981c2ebddd110f",
-      "size": 21,
-      "hash": "23f7dcbc54aa1ebb7ef433df64981c2ebddd110f"
+      "url": "/template.input.js?c127e13bc9092897c473513c235215978c6f3efc",
+      "size": 1822,
+      "hash": "c127e13bc9092897c473513c235215978c6f3efc"
     },
     {
       "path": "app/input.js",
@@ -411,9 +393,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/main.js?7a0141110465dbd271e74b103c9d23e00fea7e1b",
-      "size": 586,
-      "hash": "7a0141110465dbd271e74b103c9d23e00fea7e1b"
+      "url": "/main.js?ffa9178f91c6bc4f77ad0d60a26827d8687dd708",
+      "size": 3567,
+      "hash": "ffa9178f91c6bc4f77ad0d60a26827d8687dd708"
     },
     {
       "path": "app/style.css",
@@ -688,7 +670,7 @@
     {
       "path": "app.html",
       "where": "internal",
-      "hash": "bdfedfb574cd115d7ae9a08d016f4cd64db58fd9"
+      "hash": "94c23a9e8abd7ac13b54c85a3666d1bb54e58e40"
     }
   ]
 }

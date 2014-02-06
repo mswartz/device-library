@@ -151,12 +151,6 @@
       "path": "packages/global-imports.js"
     },
     {
-      "path": "app/device-library.js"
-    },
-    {
-      "path": "app/functions.js"
-    },
-    {
       "path": "app/input.js"
     },
     {
