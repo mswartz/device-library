@@ -33,7 +33,7 @@ if (Meteor.isClient) {
       Session.set('mode', 'input');
       displayChange();
     },
-    'click .ups-logo' : function(){
+    'click .logo' : function(){
       Session.set('mode', undefined);
       displayChange();
     }

@@ -7,6 +7,9 @@ $accent: #93164F;
 $maroon-drk : #93164F;
 
 
+body {
+	background-color: #1d1d1d;
+}
 
 /*******************************
 
@@ -16,18 +19,23 @@ Modal Styles
 
 
 .detail-modal {
+	background-color: #FFF;
 	width: 100%;
 	opacity: 0;
-	position: absolute;
-	@include trans(.3s);
+
+	@include trans(opacity, .3s);
+	@include pie-clearfix;
 
 	&.visible {
+		padding-bottom: 100px;
 		opacity: 1;
 	}
 }
 
 .input-modal {
+	background-color: #FFF;
 	display: none;
+	padding-bottom: 100px;
 
 	&.visible {
 		display: block;
@@ -177,6 +185,7 @@ h1, h2, h3, h4 {
 }
 
 .logo {
+	cursor: pointer;
 	font-weight: 100;
 	font-size: 40px;
 	line-height: 0;
@@ -210,8 +219,8 @@ Header
 .logo {
 	color: #666;
 	font-size: 30px;
-	padding: 30px;
-	width: 50%;
+	width: 200px;
+	padding: 30px 0 30px 10px;
 	float: left;
 
 	strong {
@@ -220,9 +229,29 @@ Header
 }
 
 .nav-buttons {
-	width: 40%;
+	width: 120px;
 	float: right;
 }
+
+.wiki_link {
+	height: 40px;
+	width: 40px;
+	background-image: url("img/docs.svg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 15px;
+	text-indent: -10000px;
+	margin: 10px;
+	float: right;
+	padding: 10px;
+	background-color: $maroon-drk;
+	color: #FFF;
+
+	&:hover {
+		background-size: 17px;
+	}
+}
+
 
 .add_device {
 	height: 40px;
@@ -232,9 +261,9 @@ Header
 	background-position: center center;
 	background-size: 15px;
 	text-indent: -10000px;
-	margin: 10px;
 	float: right;
 	padding: 10px;
+	margin: 10px 10px 10px 0;
 	background-color: $maroon-drk;
 	color: #FFF;
 
@@ -333,7 +362,8 @@ Home Screen
 *******************************/
 
 .home {
-	padding: 20px;
+	padding: 60px 20px;
+	background-color: #FFF;
 
 	@media (max-width: 599px){
 		@include media-grid(2, 20px);
@@ -359,4 +389,35 @@ Home Screen
 	}
 }
 
+
+/*******************************
+
+Footer
+
+*******************************/
+
+.ups-logo {
+	background-color: #000;
+	position: relative;
+	@include border-radius(70px);
+	width: 50px;
+	height: 50px;
+	margin: -25px auto 0 auto;
+
+	background-image: url("img/st.svg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 20px;
+}
+
+.footer-text {
+	margin: 20px 0 0 0;
+	text-align: center;
+	color: #666;
+
+	a {
+		text-decoration: none;
+		color: #CCC;
+	}
+}
 
