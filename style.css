@@ -539,7 +539,11 @@ button {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* Modal styles and things */
+/*******************************
+
+Modal Styles
+
+*******************************/
 .detail-modal {
   width: 100%;
   opacity: 0;
@@ -590,7 +594,11 @@ button {
   transform: scale(0, 0);
 }
 
-/* Objects & Universal */
+/*******************************
+
+Objects and Universal
+
+*******************************/
 .resp-img {
   width: 100%;
 }
@@ -619,6 +627,7 @@ button {
 
 .input-row {
   *zoom: 1;
+  margin-bottom: 20px;
 }
 .input-row:after {
   content: "";
@@ -627,17 +636,17 @@ button {
 }
 
 .label {
+  display: block;
   font-weight: 700;
-  width: 25%;
-  margin: 0 0 5% 0;
-  float: left;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
-.sidesaddle {
-  width: 70%;
-  float: right;
+.select {
+  width: 100%;
 }
 
+2
 .input-display {
   width: 100%;
   padding: 10px;
@@ -659,7 +668,11 @@ button {
   background-size: 13px;
 }
 
-/* Typography */
+/*******************************
+
+Typography
+
+*******************************/
 body {
   font-family: "Proxima Nova", "proxima-nova", "Helvetica", arial, sans-serif;
 }
@@ -719,23 +732,24 @@ h1, h2, h3, h4 {
   padding: 10px 0;
 }
 
-/* Header styles */
+/*******************************
+
+Header
+
+*******************************/
 .header {
   height: 60px;
   background-color: #1d1d1d;
 }
 
-.ups-logo {
-  cursor: pointer;
-  height: 40px;
-  background-image: url("img/devices.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  text-indent: -10000px;
-  width: 150px;
+.logo {
+  color: #666;
+  font-size: 30px;
+  padding: 30px;
+  width: 50%;
   float: left;
-  padding: 10px;
-  margin: 10px;
+}
+.logo strong {
   color: #FFF;
 }
 
@@ -762,7 +776,11 @@ h1, h2, h3, h4 {
   background-size: 17px;
 }
 
-/* Detail modal */
+/*******************************
+
+Detail Screen
+
+*******************************/
 .section {
   margin: 0 0 30px 0;
 }
@@ -776,7 +794,11 @@ h1, h2, h3, h4 {
   border-bottom: 1px solid #EEE;
 }
 
-/* Input Modal */
+/*******************************
+
+Input Screen
+
+*******************************/
 .detail-img {
   position: relative;
 }
@@ -822,7 +844,21 @@ h1, h2, h3, h4 {
   background-size: 13px;
 }
 
-/* Home page */
+#choose-art {
+  *zoom: 1;
+  margin-bottom: 20px;
+}
+#choose-art:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*******************************
+
+Home Screen
+
+*******************************/
 .home {
   padding: 20px;
 }

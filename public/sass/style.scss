@@ -8,7 +8,12 @@ $maroon-drk : #93164F;
 
 
 
-/* Modal styles and things */
+/*******************************
+
+Modal Styles
+
+*******************************/
+
 
 .detail-modal {
 	width: 100%;
@@ -56,7 +61,12 @@ $maroon-drk : #93164F;
 }
 
 
-/* Objects & Universal */
+/*******************************
+
+Objects and Universal
+
+*******************************/
+
 .resp-img {
 	width: 100%;
 }
@@ -81,19 +91,19 @@ $maroon-drk : #93164F;
 
 .input-row {
 	@include pie-clearfix;
+	margin-bottom: 20px;
 }
 
 .label {
+	display: block;
 	font-weight: 700;
-	width: 25%;
-	margin: 0 0 5% 0;
-	float: left;
+	margin-bottom: 10px;
+	font-size: 16px;
 }
 
-.sidesaddle {
-	width: 70%;
-	float: right;
-}
+.select {
+	width: 100%;
+}2
 
 
 .input-display {
@@ -118,7 +128,12 @@ $maroon-drk : #93164F;
 	}
 }
 
-/* Typography */
+/*******************************
+
+Typography
+
+*******************************/
+
 body {
 	font-family: "Proxima Nova", "proxima-nova", "Helvetica", arial, sans-serif;
 }
@@ -181,25 +196,27 @@ h1, h2, h3, h4 {
 
 
 
-/* Header styles */
+/*******************************
+
+Header
+
+*******************************/
 
 .header {
 	height: 60px;
 	background-color: $black;
 }
 
-.ups-logo {
-	cursor: pointer;
-	height: 40px;
-	background-image: url("img/devices.svg");
-	background-repeat: no-repeat;
-	background-position: center center;
-	text-indent: -10000px;
-	width: 150px;
+.logo {
+	color: #666;
+	font-size: 30px;
+	padding: 30px;
+	width: 50%;
 	float: left;
-	padding: 10px;
-	margin: 10px;
-	color: #FFF;
+
+	strong {
+		color: #FFF;
+	}
 }
 
 .nav-buttons {
@@ -227,7 +244,11 @@ h1, h2, h3, h4 {
 }
 
 
-/* Detail modal */
+/*******************************
+
+Detail Screen
+
+*******************************/
 
 .section {
 	margin: 0 0 30px 0;
@@ -247,7 +268,11 @@ h1, h2, h3, h4 {
 }
 
 
-/* Input Modal */
+/*******************************
+
+Input Screen
+
+*******************************/
 
 .detail-img {
 	position: relative;
@@ -295,8 +320,17 @@ h1, h2, h3, h4 {
 	}
 }
 
+#choose-art {
+	@include pie-clearfix;
+	margin-bottom: 20px;
+}
 
-/* Home page */
+
+/*******************************
+
+Home Screen
+
+*******************************/
 
 .home {
 	padding: 20px;
@@ -324,4 +358,5 @@ h1, h2, h3, h4 {
 		opacity: .25;
 	}
 }
+
 

@@ -23,6 +23,9 @@ var displayChange = function(){
   }
 }
 
+
+//The input template handling starts here
+
 if (Meteor.isClient) {
     //vars for art chooser
     var i = 0;
