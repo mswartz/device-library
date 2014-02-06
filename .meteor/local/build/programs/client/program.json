@@ -402,9 +402,9 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/style.css?e99bcb5203f4f024b472d41e23f197b8b28b4209",
-      "size": 15494,
-      "hash": "e99bcb5203f4f024b472d41e23f197b8b28b4209"
+      "url": "/style.css?92a86166b346d47efd953d1f072db8b5ecec2380",
+      "size": 16238,
+      "hash": "92a86166b346d47efd953d1f072db8b5ecec2380"
     },
     {
       "path": "app/img/add.svg",
@@ -423,6 +423,15 @@
       "url": "/img/arrow.svg",
       "size": 690,
       "hash": "7147f395303a2916fae57d30ec090e7b8625f877"
+    },
+    {
+      "path": "app/img/blur-bg.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/blur-bg.jpg",
+      "size": 27550,
+      "hash": "5df268b6b8bbb86d24bf68d9c7f376d55cbc91f7"
     },
     {
       "path": "app/img/device0.svg",
@@ -565,8 +574,8 @@
       "type": "asset",
       "cacheable": false,
       "url": "/sass/style.scss",
-      "size": 5549,
-      "hash": "75a589059af848cac93beeb39a28feb122edc8f2"
+      "size": 5946,
+      "hash": "1edd9d2f20a0bde61addc7bdaafc131c3fe7681a"
     },
     {
       "path": "app/bower_components/Upbase/.bower.json",
@@ -670,7 +679,7 @@
     {
       "path": "app.html",
       "where": "internal",
-      "hash": "94c23a9e8abd7ac13b54c85a3666d1bb54e58e40"
+      "hash": "9687996e453fe45f897e500de43754aa82a56751"
     }
   ]
 }

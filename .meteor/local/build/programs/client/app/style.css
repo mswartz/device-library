@@ -539,8 +539,42 @@ button {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-body {
-  background-color: #1d1d1d;
+html {
+  background-image: url(img/blur-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.home {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.detail-modal {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.input-modal {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.device-thumb-mod img {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  border: 5px solid rgba(255, 255, 255, 0);
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+  border-radius: 200px;
+}
+.device-thumb-mod img:hover {
+  border: 6px solid rgba(255, 255, 255, 0.4);
 }
 
 /*******************************
@@ -549,7 +583,6 @@ Modal Styles
 
 *******************************/
 .detail-modal {
-  background-color: #FFF;
   width: 100%;
   opacity: 0;
   -webkit-transition: 0.3s opacity ease-in;
@@ -569,7 +602,6 @@ Modal Styles
 }
 
 .input-modal {
-  background-color: #FFF;
   display: none;
   padding-bottom: 100px;
 }
@@ -893,7 +925,6 @@ Home Screen
 *******************************/
 .home {
   padding: 60px 20px;
-  background-color: #FFF;
 }
 @media (max-width: 599px) {
   .home {
