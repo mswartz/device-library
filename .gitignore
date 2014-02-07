@@ -1,5 +1,4 @@
 design*
-public/bower_components
-public/sass
+public/bower_components*
 .sass-cache*
 .meteor*
