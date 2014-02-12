@@ -31,7 +31,39 @@ if (Meteor.isClient) {
     var i = 0;
     var limit = 10;
 
-  
+  Template.device_detail.events({
+    // handle individual click, convert to field
+    'click .editable': function(event, template) {
+      // this.id is the id of the obj in play here...
+      var $target = $(event.target);
+
+      if(!$target.hasClass('editable')) {
+        $target = $target.parent('.editable');
+      }
+
+      var originalText = $(event.target).text();
+      var $textField = $('<input/>').addClass('newValue').attr('value', originalText);
+      $target.html($textField);
+      $target.find('input').focus();
+    },
+    'keypress input': function() {
+      if (event.charCode == 13) { // enter
+          var $target = $(event.target);
+          var newValue = $target.attr('value');
+          var field = $target.parent().data('field');
+          $target.parent().html( $('<strong/>').text(newValue) );
+
+          var data = {};
+          data[field] = newValue;
+          
+          Meteor.call('updateDevice', this._id, data, function() {
+            console.log('done?');
+          });
+
+      }
+    }
+  });
+
   Template.device_input.events({
     'click .close' : function(){
       Session.set('mode', undefined);

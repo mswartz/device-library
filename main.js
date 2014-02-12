@@ -72,9 +72,15 @@ if (Meteor.isClient) {
     'device' : function() {
       var devices =  Devices.find({_id: Session.get('device_selected')}).fetch();
 
+      if(devices.length <= 0) {
+        return [];
+      }
+
       //reverse the history array so the latest thing is on top
-      for (var i = 0; i<devices.length; i++){
-        devices[0].history.reverse();
+      if(devices[0].hasOwnProperty('history')) {
+        for (var i = 0; i<devices.length; i++){
+          devices[0].history.reverse();
+        }
       }
       
       return devices;
@@ -119,6 +125,10 @@ if (Meteor.isServer) {
         borrower: undefined,
         history: [{'message' : 'The device was created.'}]
       })
+    },
+    updateDevice: function(id, data) {
+      console.log(id, data);
+      Devices.update({ _id: id }, { $set: data });
     }
   })
 

@@ -9,21 +9,21 @@
 	</div>
 
 	<div class="device-info section">
-		<h1 class="h1">{{name}}</h1>
+		<h1 class="h1 editable" data-field="name">{{name}}</h1>
 
 		<div class="section">
 			<table class="detail-table">
 				<tr>
 					<td>OS</td>
-					<td><strong>{{os}}</strong></td>
+					<td data-field="os" class="editable"><strong>{{os}}</strong></td>
 				</tr>
 				<tr>
 					<td>Release</td>
-					<td><strong>{{release}}</strong></td>
+					<td data-field="release" class="editable"><strong>{{release}}</strong></td>
 				</tr>
 				<tr>
 					<td>Resolution</td>
-					<td><strong>{{resolution}}</strong></td>
+					<td data-field="resolution" class="editable"><strong>{{resolution}}</strong></td>
 				</tr>
 				<tr>
 					<td>Status</td>
@@ -32,12 +32,16 @@
 			</table>
 		</div>
 
-		{{#if notes}}
-			<div class="section">
-				<h3 class="h3 heading">Notes:</h3>
-				<p class="notes">{{notes}}</p>
-			</div>
-		{{/if}}
+		<div class="section">
+			<h3 class="h3 heading">Notes:</h3>
+			<p class="notes editable" data-field="notes">
+				{{#if notes}}
+					{{notes}}
+				{{else}}
+					n/a
+				{{/if}}
+			</p>
+		</div>
 	</div>
 
 
