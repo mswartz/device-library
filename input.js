@@ -29,7 +29,7 @@ var displayChange = function(){
 if (Meteor.isClient) {
     //vars for art chooser
     var i = 0;
-    var limit = 10;
+    var limit = 14;
 
   Template.device_detail.events({
     // handle individual click, convert to field
@@ -77,21 +77,21 @@ if (Meteor.isClient) {
     },
     //cycle through images
     'click .left-arrow' : function(){
-      if(i>0){
+      if(i>1){
         i--;
-        $('.input_img').attr('src', '/img/device'+i+'.svg');
-      } else if(i==0){
+        $('.input_img').attr('src', '/img/devices-'+i+'.svg');
+      } else if(i==1){
         i = limit;
-        $('.input_img').attr('src', '/img/device'+i+'.svg');
+        $('.input_img').attr('src', '/img/devices-'+i+'.svg');
       }
     },
     'click .right-arrow' : function(){
       if(i<limit){
         i++;
-        $('.input_img').attr('src', '/img/device'+i+'.svg');
+        $('.input_img').attr('src', '/img/devices-'+i+'.svg');
       } else if(i==limit){
-        i = 0;
-        $('.input_img').attr('src', '/img/device'+i+'.svg');
+        i = 1;
+        $('.input_img').attr('src', '/img/devices-'+i+'.svg');
       }
     },
     //handle a submit click
