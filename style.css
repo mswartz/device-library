@@ -549,7 +549,7 @@ Modal Styles
 
 *******************************/
 .detail-modal {
-  background-color: #FFF;
+  background-color: #eeeeee;
   width: 100%;
   opacity: 0;
   -webkit-transition: 0.3s opacity ease-in;
@@ -569,7 +569,7 @@ Modal Styles
 }
 
 .input-modal {
-  background-color: #FFF;
+  background-color: #eeeeee;
   display: none;
   padding-bottom: 100px;
 }
@@ -578,7 +578,7 @@ Modal Styles
 }
 
 .modal-body {
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 auto;
   z-index: 1000;
 }
@@ -659,7 +659,6 @@ Objects and Universal
   width: 100%;
 }
 
-2
 .input-display {
   width: 100%;
   padding: 10px;
@@ -826,6 +825,18 @@ Detail Screen
   border-bottom: 1px solid #EEE;
 }
 
+.detail-img {
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+  border-radius: 200px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: white 0 0 40px;
+  -moz-box-shadow: white 0 0 40px;
+  box-shadow: white 0 0 40px;
+}
+
 /*******************************
 
 Input Screen
@@ -893,11 +904,11 @@ Home Screen
 *******************************/
 .home {
   padding: 60px 20px;
-  background-color: #FFF;
+  background-color: #eeeeee;
 }
-@media (max-width: 599px) {
+@media (min-width: 600px) and (max-width: 899px) {
   .home {
-    margin-left: -20px;
+    margin-left: -40px;
     *zoom: 1;
   }
   .home:after {
@@ -907,7 +918,7 @@ Home Screen
   }
   .home > .media-block {
     float: left;
-    padding-left: 20px;
+    padding-left: 40px;
     width: 50%;
   }
   .home > .media-block:nth-of-type(2n+3) {
@@ -917,7 +928,7 @@ Home Screen
     clear: left;
   }
 }
-@media (min-width: 600px) and (max-width: 899px) {
+@media (min-width: 900px) {
   .home {
     margin-left: -40px;
     *zoom: 1;
@@ -942,28 +953,6 @@ Home Screen
     clear: left;
   }
 }
-@media (min-width: 900px) {
-  .home {
-    margin-left: -40px;
-    *zoom: 1;
-  }
-  .home:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .home > .media-block {
-    float: left;
-    padding-left: 40px;
-    width: 25%;
-  }
-  .home > .media-block:nth-of-type(4n+5) {
-    clear: left;
-  }
-  .home > .media-block.n5 {
-    clear: left;
-  }
-}
 
 .device-thumb-mod {
   text-align: center;
@@ -973,6 +962,24 @@ Home Screen
 }
 .device-thumb-mod.out {
   opacity: .25;
+}
+
+.device-img {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+  border-radius: 200px;
+}
+.device-img:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: white 0 0 40px;
+  -moz-box-shadow: white 0 0 40px;
+  box-shadow: white 0 0 40px;
 }
 
 /*******************************

@@ -2,6 +2,7 @@
 @import "reset";
 
 $black : #1d1d1d;
+$bg-color: #EEE;
 $gray: #EEE;
 $accent: #93164F;
 $maroon-drk : #93164F;
@@ -19,7 +20,7 @@ Modal Styles
 
 
 .detail-modal {
-	background-color: #FFF;
+	background-color: $bg-color;
 	width: 100%;
 	opacity: 0;
 
@@ -33,7 +34,7 @@ Modal Styles
 }
 
 .input-modal {
-	background-color: #FFF;
+	background-color: $bg-color;
 	display: none;
 	padding-bottom: 100px;
 
@@ -43,7 +44,7 @@ Modal Styles
 }
 
 .modal-body {
-	max-width: 300px;
+	max-width: 400px;
 	margin: 0 auto;
 	z-index: 1000;
 }
@@ -111,7 +112,7 @@ Objects and Universal
 
 .select {
 	width: 100%;
-}2
+}
 
 
 .input-display {
@@ -296,6 +297,12 @@ Detail Screen
 	}
 }
 
+.detail-img {
+	@include border-radius(200px);
+	background-color: rgba(255,255,255, .5);
+	@include box-shadow(#FFF 0 0 40px);
+}
+
 
 /*******************************
 
@@ -363,18 +370,14 @@ Home Screen
 
 .home {
 	padding: 60px 20px;
-	background-color: #FFF;
-
-	@media (max-width: 599px){
-		@include media-grid(2, 20px);
-	}
+	background-color: $bg-color;
 
 	@media (min-width: 600px) and (max-width: 899px){
-		@include media-grid(3, 40px);
+		@include media-grid(2, 40px);
 	}
 
 	@media (min-width: 900px){
-		@include media-grid(4, 40px);
+		@include media-grid(3, 40px);
 	}
 }
 
@@ -389,6 +392,16 @@ Home Screen
 	}
 }
 
+.device-img {
+	@include trans;
+	@include border-radius(200px);
+
+
+	&:hover {
+		background-color: rgba(255,255,255, .5);
+		@include box-shadow(#FFF 0 0 40px);
+	}
+}
 
 /*******************************
 

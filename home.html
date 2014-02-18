@@ -28,7 +28,7 @@
 
 <template name="nav">
 	<header class="header">
-	  <div class="logo">Gadget <strong>Lab</strong></div>
+	  <div class="logo">Gadget<strong>Lab</strong></div>
 	  <div class="nav-buttons">
   		  <a class="add_device" href="#">Add Device</a>
 		  <a class="wiki_link" target="blank" href="https://github.com/Upstatement/Upstatement/wiki/Device-Testing">Docs</a>
@@ -39,7 +39,7 @@
 
 <template name="device_thumb">
 	<div class="device-thumb-mod media-block {{status}}">
-		<img class="resp-img" src="{{img}}"/>
+		<div class="device-img"><img src="{{img}}"/></div>
 		<h1 class="h2">{{name}}</h1>
 		<h3 class="h3">{{os}}</h3>
 		{{#if borrower}}<small>({{borrower}}'s got it.)</small>{{/if}}
