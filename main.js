@@ -96,6 +96,7 @@ if (Meteor.isClient) {
     'click #checkout_submit' : function() {
       var device = Devices.find({_id: Session.get('device_selected')}).fetch();
 
+      // these updates should be moved to Meteor.call functions
       if (device[0].status == 'in'){
         var borrower = $('#checkout_name').val();
         Devices.update({_id: Session.get('device_selected')}, {$set: {'borrower': borrower, 'status':'out'}});
@@ -105,6 +106,14 @@ if (Meteor.isClient) {
         $('#checkout_submit').val('Check it out!');
         Devices.update({_id: Session.get('device_selected')}, {$set: {'borrower': null, 'status':'in'}});
         Devices.update({_id: Session.get('device_selected')}, {$push: {'history': {'name' : device[0].borrower, 'message' : 'brought it back.'}}});
+      }
+    },
+    'click #delete_device' : function() {
+      var response = confirm('are you sure you want to delete this?');
+      if(response) {
+        Meteor.call('removeDevice', this._id);
+        Session.set('mode', undefined);
+        displayChange();
       }
     }
   });
@@ -124,11 +133,13 @@ if (Meteor.isServer) {
         status : 'in',
         borrower: undefined,
         history: [{'message' : 'The device was created.'}]
-      })
+      });
     },
     updateDevice: function(id, data) {
-      console.log(id, data);
       Devices.update({ _id: id }, { $set: data });
+    },
+    removeDevice: function(id) {
+      Devices.remove({ _id: id });
     }
   })
 

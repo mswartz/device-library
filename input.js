@@ -55,11 +55,17 @@ if (Meteor.isClient) {
 
           var data = {};
           data[field] = newValue;
-          
+
           Meteor.call('updateDevice', this._id, data, function() {
             console.log('done?');
           });
+      }
+    },
+    'click #device_delete': function() {
+      var response = confirm('Are you sure you want to delete ' + this.name + '?');
 
+      if(response) {
+        Meteor.call('removeDevice', this._id);
       }
     }
   });
