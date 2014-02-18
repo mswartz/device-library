@@ -27,7 +27,7 @@
 				</tr>
 				<tr>
 					<td>Status</td>
-					<td><strong>Checked {{status}}</strong></td>
+					<td><strong>Checked <span id="status">{{#if checked_out}}out{{else}}in{{/if}}</span></strong></td>
 				</tr>
 			</table>
 		</div>
@@ -49,12 +49,14 @@
 		<h3 class="h3 heading">Checkout center</h3>
 		
 		<div class="checkout-form">
-			{{#unless borrower}}<input class="input" type="text" placeholder="Who's borrowing it?" id="checkout_name"/>{{/unless}}
-			{{#if borrower}}<p class="input-display">{{borrower}}'s running around with it.</p>{{/if}}
+			{{#if checked_out}}
+				<p class="input-display">{{borrower}}'s running around with it.</p>
+			{{else}}
+				<input class="input" type="text" placeholder="Who's borrowing it?" id="checkout_name"/>
+			{{/if}}
 		</div>
-		
 
-		<input id="checkout_submit" class="btn" type="submit" {{#if borrower}}value="Bring it back!"{{/if}} {{#unless borrower}}value="Check it out!"{{/unless}}/>
+		<input id="checkout_submit" class="btn" type="submit" value="{{#if checked_out}}Bring it back!{{else}}Check it out!{{/if}}"/>
 
 	</div>
 

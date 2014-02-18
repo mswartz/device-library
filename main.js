@@ -94,19 +94,23 @@ if (Meteor.isClient) {
       displayChange();
     }, 
     'click #checkout_submit' : function() {
-      var device = Devices.find({_id: Session.get('device_selected')}).fetch();
+      data = {};
 
-      // these updates should be moved to Meteor.call functions
-      if (device[0].status == 'in'){
-        var borrower = $('#checkout_name').val();
-        Devices.update({_id: Session.get('device_selected')}, {$set: {'borrower': borrower, 'status':'out'}});
-        Devices.update({_id: Session.get('device_selected')}, {$push: {'history': {'name' : borrower, 'message' : 'checked out the device.'}}});
-        $('#checkout_submit').val('Bring it back!');
+      var buttonMsg;
+      if(this.checked_out === false) {
+        data.checked_out = true;
+        data.borrower = $('#checkout_name').val();
+        buttonMsg = 'Bring it back!';
+        Meteor.call('pushToHistory', this._id, { name: data.borrower, message: 'checked out the device.'});
       } else {
-        $('#checkout_submit').val('Check it out!');
-        Devices.update({_id: Session.get('device_selected')}, {$set: {'borrower': null, 'status':'in'}});
-        Devices.update({_id: Session.get('device_selected')}, {$push: {'history': {'name' : device[0].borrower, 'message' : 'brought it back.'}}});
+        data.checked_out = false;
+        data.borrower = null;
+        buttonMsg = 'Check it out!';
+        Meteor.call('pushToHistory', this._id, { name: data.borrower, message: 'brought it back.'});
       }
+
+      $('#checkout_submit').attr('value', buttonMsg);
+      Meteor.call('updateDevice', this._id, data);
     },
     'click #delete_device' : function() {
       var response = confirm('are you sure you want to delete this?');
@@ -136,10 +140,14 @@ if (Meteor.isServer) {
       });
     },
     updateDevice: function(id, data) {
+      console.log('updating device', id, data);
       Devices.update({ _id: id }, { $set: data });
     },
     removeDevice: function(id) {
       Devices.remove({ _id: id });
+    },
+    pushToHistory: function(id, data) {
+      Devices.update({ _id: id }, {$push: {'history': data} })
     }
   })
 
