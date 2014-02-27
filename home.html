@@ -30,8 +30,12 @@
 	<header class="header">
 	  <div class="logo">Gadget<strong>Lab</strong></div>
 	  <div class="nav-buttons">
+	  	{{#if logged_in}}
   		  <a class="add_device" href="#">Add Device</a>
 		  <a class="wiki_link" target="blank" href="https://github.com/Upstatement/Upstatement/wiki/Device-Testing">Docs</a>
+		{{else}}
+		  <a class="show_login" href="#login">Login</a>
+		{{/if}}
 	  </div>
 	</header>
 </template>
