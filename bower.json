@@ -1,0 +1,22 @@
+{
+  "name": "device-library",
+  "version": "0.1",
+  "homepage": "https://github.com/mswartz/device-library",
+  "authors": [
+    "mswartz <mswartz@gmail.com>",
+    "pkarl <pete.karl@gmail.com>"
+  ],
+  "description": "it's devices, but more (and also less)",
+  "license": "N/A",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Upbase": "git@github.com:Upstatement/upbase.git#~0.1.4"
+  }
+}
