@@ -1,6 +1,8 @@
 @import "base";
 @import "reset";
 
+$svg-path: "/";
+
 $black : #1d1d1d;
 $bg-color: #EEE;
 $gray: #EEE;
@@ -258,6 +260,25 @@ Header
 	height: 40px;
 	width: 40px;
 	background-image: url("img/add.svg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 15px;
+	text-indent: -10000px;
+	float: right;
+	padding: 10px;
+	margin: 10px 10px 10px 0;
+	background-color: $maroon-drk;
+	color: #FFF;
+
+	&:hover {
+		background-size: 17px;
+	}
+}
+
+.show_login {
+	height: 40px;
+	width: 40px;
+	@include svg("img/login", no-cover);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 15px;

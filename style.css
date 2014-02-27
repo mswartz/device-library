@@ -807,6 +807,27 @@ Header
   background-size: 17px;
 }
 
+.show_login {
+  height: 40px;
+  width: 40px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url('img/login.png');
+  background-image: url('img/login.svg'), none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 15px;
+  text-indent: -10000px;
+  float: right;
+  padding: 10px;
+  margin: 10px 10px 10px 0;
+  background-color: #93164f;
+  color: #FFF;
+}
+.show_login:hover {
+  background-size: 17px;
+}
+
 /*******************************
 
 Detail Screen
