@@ -30,14 +30,21 @@
 	<header class="header">
 	  <div class="logo">Gadget<strong>Lab</strong></div>
 	  <div class="nav-buttons">
-	  	{{#if logged_in}}
-  		  <a class="add_device" href="#">Add Device</a>
-		  <a class="wiki_link" target="blank" href="https://github.com/Upstatement/Upstatement/wiki/Device-Testing">Docs</a>
+	  	{{#if currentUser}}
+	  	  <a class="user_logout" href="#logout" title="logout">Logout</a>
+  		  <a class="add_device" href="#" title="Add a device">Add Device</a>
+		  <a class="wiki_link" target="blank" href="https://github.com/Upstatement/Upstatement/wiki/Device-Testing" title="Documentation at the Upstatement wiki">Docs</a>
 		{{else}}
 		  <a class="show_login" href="#login">Login</a>
+		  <a class="show_register" href="#register">Register</a>
 		{{/if}}
 	  </div>
 	</header>
+
+	{{#unless currentUser}}
+		{{> login}}
+		{{> register}}
+	{{/unless}}
 </template>
 
 
@@ -57,4 +64,45 @@
 	  	{{> device_thumb}}
 	  {{/each}}
 	</div>
+</template>
+
+<template name="register">
+	<div class="register-form account-form">
+		<h3 class="h3">Register</h3>
+		<form id="register-form" action="action">
+	      <div class="form-mod">
+	      	<div>name:</div>
+	       <input type="name" id="account-name" />
+	      	<div>email:</div>
+	       <input type="email" id="account-email" />
+	       <div>password:</div>
+	       <input type="password" id="account-password" />
+	       <div>registration key:</div>
+	       <input type="text" id="account-key" />
+
+	       <div class="submit-mod">
+	       	<input type="submit" id="create-account" value="Create an Account" />
+	       </div>
+	     </div>
+	   </form>
+	   <input class="close" type="button" value="cancel">
+   </div>
+</template>
+
+<template name="login">
+	<div class="login-form account-form">
+		<h3 class="h3">Login</h3>
+		<form id="login-form" action="action">
+	      <div class="form-mod">
+	        <div>username:</div>
+	        <input type="email" id="login-email" />
+	        <div>pass:</div>
+	        <input type="password" id="login-password" />
+	        <div class="submit-mod">
+	        	<input class="submit-button" type="submit" id="login-button" value="Sign in" />
+	        </div>
+	     </div>
+	   </form> 
+	   <input class="close" type="button" value="cancel">
+   </div>
 </template>

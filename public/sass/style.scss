@@ -232,7 +232,7 @@ Header
 }
 
 .nav-buttons {
-	width: 120px;
+	width: 200px;
 	float: right;
 }
 
@@ -294,6 +294,83 @@ Header
 	}
 }
 
+.user_logout {
+	height: 40px;
+	width: 40px;
+	@include svg("img/logout", no-cover);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 15px;
+	text-indent: -10000px;
+	float: right;
+	padding: 10px;
+	margin: 10px 10px 10px 0;
+	background-color: $maroon-drk;
+	color: #FFF;
+
+	&:hover {
+		background-size: 17px;
+	}
+}
+
+.show_register {
+	height: 40px;
+	width: 40px;
+	@include svg("img/register", no-cover);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 15px;
+	text-indent: -10000px;
+	float: right;
+	padding: 10px;
+	margin: 10px 10px 10px 0;
+	background-color: $maroon-drk;
+	color: #FFF;
+
+	&:hover {
+		background-size: 17px;
+	}
+}
+
+.login-form {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	width: 300px;
+	margin-left: -150px;
+	padding: 20px;
+	background-color: #FFFFFF;
+	border: 1px solid #b9b9b9;
+	box-shadow: 0 0 0 10000px rgba(0,0,0,0.2);
+	z-index: 10000;
+}
+	.login-form .form-mod, .register-form .form-mod {
+		text-align: center;
+	}
+
+.submit-mod {
+	padding: 20px;
+}
+
+.register-form {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	width: 300px;
+	margin-left: -150px;
+	padding: 20px;
+	background-color: #FFFFFF;
+	border: 1px solid #b9b9b9;
+	box-shadow: 0 0 0 10000px rgba(0,0,0,0.2);
+	z-index: 10000;
+}
+	.login-form .form-mod {
+		text-align: center;
+	}
+
+.account-form {
+	display: none;
+}
 
 /*******************************
 
