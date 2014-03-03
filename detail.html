@@ -45,6 +45,14 @@
 	<div class="device-checkout section">
 		<h3 class="h3 heading">Checkout center</h3>
 
+		<div class="checkout-form">
+			{{#if checked_out}}
+				<p class="input-display">{{borrower}}'s running around with it.</p>
+			{{else}}
+				<input class="input" disabled="true" type="text" value="{{user}}" id="checkout_name"/>
+			{{/if}}
+		</div>
+
 		<div class="inner">
 			<div class="checkout-form">
 				{{#if borrower}}

@@ -6,7 +6,7 @@ http_path = "/"
 # And this is where compass will watch and compile stuff when it runs:
 css_dir = "/"
 sass_dir = "public/sass"
-images_dir = "img"
+images_dir = "puglic/img"
 javascripts_dir = "js"
 fonts_dir = "fonts"
 relative_assets = true
