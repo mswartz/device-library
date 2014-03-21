@@ -439,11 +439,11 @@ Home Screen
 	background-color: $bg-color;
 
 	@media (min-width: 600px) and (max-width: 899px){
-		@include media-grid(2, 40px);
+		@include media-grid(3, 40px);
 	}
 
 	@media (min-width: 900px){
-		@include media-grid(3, 40px);
+		@include media-grid(4, 40px);
 	}
 }
 
@@ -453,18 +453,21 @@ Home Screen
 	cursor: pointer;
 	margin-bottom: 30px;
 
-	&.out {
-		opacity: .25;
-	}
+
 }
 
 .device-img {
 	@include trans;
-	@include border-radius(200px);
+	@include border-radius(8px);
 
 
 	&:hover {
+		background-color: #FFF;
 
+	}
+
+	&.out {
+		opacity: .25;
 	}
 }
 

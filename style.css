@@ -986,12 +986,15 @@ Home Screen
   .home > .media-block {
     float: left;
     padding-left: 40px;
-    width: 50%;
+    width: 33.3333%;
   }
-  .home > .media-block:nth-of-type(2n+3) {
+  .home > .media-block:nth-of-type(3n+4) {
     clear: left;
   }
-  .home > .media-block.n3 {
+  .ie7 .home > .media-block {
+    width: 33%;
+  }
+  .home > .media-block.n4 {
     clear: left;
   }
 }
@@ -1008,15 +1011,12 @@ Home Screen
   .home > .media-block {
     float: left;
     padding-left: 40px;
-    width: 33.3333%;
+    width: 25%;
   }
-  .home > .media-block:nth-of-type(3n+4) {
+  .home > .media-block:nth-of-type(4n+5) {
     clear: left;
   }
-  .ie7 .home > .media-block {
-    width: 33%;
-  }
-  .home > .media-block.n4 {
+  .home > .media-block.n5 {
     clear: left;
   }
 }
@@ -1027,20 +1027,23 @@ Home Screen
   cursor: pointer;
   margin-bottom: 30px;
 }
-.device-thumb-mod.out {
-  opacity: .25;
-}
 
 .device-img {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  -ms-border-radius: 200px;
-  -o-border-radius: 200px;
-  border-radius: 200px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+.device-img:hover {
+  background-color: #FFF;
+}
+.device-img.out {
+  opacity: .25;
 }
 
 /*******************************
