@@ -3,11 +3,13 @@
 
 $svg-path: "/";
 
-$nav : #CCC;
 $bg-color: #EEE;
 $gray: #EEE;
 $accent: #0bad98;
 $alert: #fd4325;
+
+$nav : $accent;
+
 
 
 body {
@@ -49,6 +51,7 @@ Modal Styles
 	max-width: 400px;
 	margin: 0 auto;
 	z-index: 1000;
+	padding: 40px 0;
 }
 
 .home {
@@ -124,10 +127,14 @@ Objects and Universal
 }
 
 .close {
+	position: absolute;
+	z-index: 1000;
 	text-indent: -10000px;
 	display: block;
-	width: 30px;
-	height: 30px;
+	@include border-radius(2px);
+	margin: -5px 0 0 -5px;
+	width: 40px;
+	height: 40px;
 	padding: 10px;
 	background-color: $alert;
 	background-image: url("img/x.svg");
@@ -186,6 +193,7 @@ h1, h2, h3, h4 {
 	border-bottom: 1px solid #CCC;
 	padding: 8px;
 	background-color: #dcdcdc;
+	@include border-radius(8px 8px 0 0);
 }
 
 .logo {
@@ -225,7 +233,7 @@ Header
 }
 
 .logo {
-	color: #666;
+	color: #FFF;
 	font-size: 30px;
 	width: 200px;
 	padding: 30px 0 30px 10px;
@@ -311,15 +319,15 @@ Detail Screen
 	background-color: #FFF;
 	@include border-radius(6px);
 	@include box-shadow(#CCC 10px 10px 0px);
+	@include trans;
 
 	&.art {
-		background-color: $accent;
-		@include box-shadow(#222 10px 10px 0px);
+		background-color: #FFF;
 
 		.h1 {
 			text-align: center;
 			padding: 10px 0;
-			color: #FFF;
+			color: #000;
 		}
 	}
 
@@ -333,6 +341,10 @@ Detail Screen
 				background-color: darken($alert, 5%);
 			}
 		}
+	}
+
+	&:hover {
+		@include box-shadow(#666 10px 10px 0px);
 	}
 }
 

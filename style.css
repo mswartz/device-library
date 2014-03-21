@@ -581,6 +581,7 @@ Modal Styles
   max-width: 400px;
   margin: 0 auto;
   z-index: 1000;
+  padding: 40px 0;
 }
 
 .home .device-thumb-mod {
@@ -666,10 +667,18 @@ Objects and Universal
 }
 
 .close {
+  position: absolute;
+  z-index: 1000;
   text-indent: -10000px;
   display: block;
-  width: 30px;
-  height: 30px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  margin: -5px 0 0 -5px;
+  width: 40px;
+  height: 40px;
   padding: 10px;
   background-color: #fd4325;
   background-image: url("img/x.svg");
@@ -726,6 +735,11 @@ h1, h2, h3, h4 {
   border-bottom: 1px solid #CCC;
   padding: 8px;
   background-color: #dcdcdc;
+  -webkit-border-radius: 8px 8px 0 0;
+  -moz-border-radius: 8px 8px 0 0;
+  -ms-border-radius: 8px 8px 0 0;
+  -o-border-radius: 8px 8px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 
 .logo {
@@ -756,11 +770,11 @@ Header
 *******************************/
 .header {
   height: 60px;
-  background-color: #cccccc;
+  background-color: #0bad98;
 }
 
 .logo {
-  color: #666;
+  color: #FFF;
   font-size: 30px;
   width: 200px;
   padding: 30px 0 30px 10px;
@@ -848,17 +862,18 @@ Detail Screen
   -webkit-box-shadow: #cccccc 10px 10px 0px;
   -moz-box-shadow: #cccccc 10px 10px 0px;
   box-shadow: #cccccc 10px 10px 0px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 .section.art {
-  background-color: #0bad98;
-  -webkit-box-shadow: #222222 10px 10px 0px;
-  -moz-box-shadow: #222222 10px 10px 0px;
-  box-shadow: #222222 10px 10px 0px;
+  background-color: #FFF;
 }
 .section.art .h1 {
   text-align: center;
   padding: 10px 0;
-  color: #FFF;
+  color: #000;
 }
 .section.warning {
   background-color: #fd4325;
@@ -869,6 +884,11 @@ Detail Screen
 }
 .section.warning .btn:hover {
   background-color: #fd2d0c;
+}
+.section:hover {
+  -webkit-box-shadow: #666666 10px 10px 0px;
+  -moz-box-shadow: #666666 10px 10px 0px;
+  box-shadow: #666666 10px 10px 0px;
 }
 
 .inner {
