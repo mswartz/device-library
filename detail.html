@@ -11,7 +11,7 @@
 	<div class="device-info section">
 		<h1 class="h1 editable" data-field="name">{{name}}</h1>
 
-		<div class="section">
+		<div class="inner">
 			<table class="detail-table">
 				<tr>
 					<td>OS</td>
@@ -29,47 +29,47 @@
 					<td>Status</td>
 					<td><strong>Checked <span id="status">{{#if checked_out}}out{{else}}in{{/if}}</span></strong></td>
 				</tr>
-			</table>
-		</div>
 
-		<div class="section">
-			<h3 class="h3 heading">Notes:</h3>
-			<p class="notes editable" data-field="notes">
 				{{#if notes}}
+				<tr>
+					<td>Notes</td>
 					{{notes}}
-				{{else}}
-					n/a
+				</tr>
 				{{/if}}
-			</p>
-		</div>
+			</table>
+		</div><!-- inner -->
 	</div>
 
 
 	<div class="device-checkout section">
 		<h3 class="h3 heading">Checkout center</h3>
-		
-		<div class="checkout-form">
-			{{#if checked_out}}
-				<p class="input-display">{{borrower}}'s running around with it.</p>
-			{{else}}
-				<input class="input" type="text" placeholder="Who's borrowing it?" id="checkout_name"/>
-			{{/if}}
-		</div>
 
-		<input id="checkout_submit" class="btn" type="submit" value="{{#if checked_out}}Bring it back!{{else}}Check it out!{{/if}}"/>
+		<div class="inner">
+			<div class="checkout-form">
+				{{#if checked_out}}
+					<p class="input-display">{{borrower}}'s running around with it.</p>
+				{{else}}
+					<input class="input" type="text" placeholder="Who's borrowing it?" id="checkout_name"/>
+				{{/if}}
+			</div>
 
+			<input id="checkout_submit" class="btn" type="submit" value="{{#if checked_out}}Bring it back!{{else}}Check it out!{{/if}}"/>
+		</div><!-- inner -->
 	</div>
 
 	<div class="device-history section">
 		<h3 class="h3 heading">Activity</h3>
-		<ul class="history-list">
-		{{#each history}}
-			<li><strong>{{name}}</strong> {{message}}</li>
-		{{/each}}
-		</ul>
-	</div>
 
-	<div class="section">
+		<div class="inner">
+			<ul class="history-list">
+			{{#each history}}
+				<li><strong>{{name}}</strong> {{message}}</li>
+			{{/each}}
+			</ul>
+			</div><!--inner -->
+	</div><!-- section -->
+
+	<div class="section warning">
 		<input id="delete_device" class="btn" type="submit" value="delete this device"/>
 	</div>
 </div>

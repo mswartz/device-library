@@ -7,7 +7,7 @@ $nav : #CCC;
 $bg-color: #EEE;
 $gray: #EEE;
 $accent: #0bad98;
-$maroon-drk : #93164F;
+$alert: #fd4325;
 
 
 body {
@@ -88,9 +88,9 @@ Objects and Universal
 	margin: 0 auto;
 	padding: 10px;
 	@include border-radius(8px);
-	border: 1px solid #EEE;
 	background-color: $accent;
 	outline: none;
+	border: 0;
 }
 
 .input {
@@ -183,8 +183,8 @@ h1, h2, h3, h4 {
 .heading {
 	text-align: center;
 	border-bottom: 1px solid #CCC;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
+	padding: 8px;
+	background-color: #dcdcdc;
 }
 
 .logo {
@@ -251,7 +251,7 @@ Header
 	margin: 10px;
 	float: right;
 	padding: 10px;
-	background-color: $maroon-drk;
+	background-color: $accent;
 	color: #FFF;
 
 	&:hover {
@@ -307,6 +307,25 @@ Detail Screen
 
 .section {
 	margin: 0 0 30px 0;
+	background-color: #FFF;
+	@include border-radius(6px);
+	@include box-shadow(#CCC 10px 10px 0px);
+
+	&.warning {
+		background-color: $alert;
+		.btn {
+			background-color: $alert;
+			width: 100%;
+
+			&:hover {
+				background-color: darken($alert, 5%);
+			}
+		}
+	}
+}
+
+.inner {
+	padding: 10px;
 }
 
 .device-info {
@@ -323,9 +342,7 @@ Detail Screen
 }
 
 .detail-img {
-	@include border-radius(200px);
-	background-color: rgba(255,255,255, .5);
-	@include box-shadow(#FFF 0 0 40px);
+
 }
 
 
