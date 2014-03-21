@@ -128,7 +128,8 @@ Objects and Universal
 	display: block;
 	width: 30px;
 	height: 30px;
-	background-color: $accent;
+	padding: 10px;
+	background-color: $alert;
 	background-image: url("img/x.svg");
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -310,6 +311,17 @@ Detail Screen
 	background-color: #FFF;
 	@include border-radius(6px);
 	@include box-shadow(#CCC 10px 10px 0px);
+
+	&.art {
+		background-color: $accent;
+		@include box-shadow(#222 10px 10px 0px);
+
+		.h1 {
+			text-align: center;
+			padding: 10px 0;
+			color: #FFF;
+		}
+	}
 
 	&.warning {
 		background-color: $alert;

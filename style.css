@@ -670,7 +670,8 @@ Objects and Universal
   display: block;
   width: 30px;
   height: 30px;
-  background-color: #0bad98;
+  padding: 10px;
+  background-color: #fd4325;
   background-image: url("img/x.svg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -847,6 +848,17 @@ Detail Screen
   -webkit-box-shadow: #cccccc 10px 10px 0px;
   -moz-box-shadow: #cccccc 10px 10px 0px;
   box-shadow: #cccccc 10px 10px 0px;
+}
+.section.art {
+  background-color: #0bad98;
+  -webkit-box-shadow: #222222 10px 10px 0px;
+  -moz-box-shadow: #222222 10px 10px 0px;
+  box-shadow: #222222 10px 10px 0px;
+}
+.section.art .h1 {
+  text-align: center;
+  padding: 10px 0;
+  color: #FFF;
 }
 .section.warning {
   background-color: #fd4325;
