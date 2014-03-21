@@ -46,14 +46,14 @@
 
 		<div class="inner">
 			<div class="checkout-form">
-				{{#if checked_out}}
+				{{#if borrower}}
 					<p class="input-display">{{borrower}}'s running around with it.</p>
 				{{else}}
 					<input class="input" type="text" placeholder="Who's borrowing it?" id="checkout_name"/>
 				{{/if}}
 			</div>
 
-			<input id="checkout_submit" class="btn" type="submit" value="{{#if checked_out}}Bring it back!{{else}}Check it out!{{/if}}"/>
+			<input id="checkout_submit" class="btn" type="submit" value="{{#if borrower}}Bring it back!{{else}}Check it out!{{/if}}"/>
 		</div><!-- inner -->
 	</div>
 
