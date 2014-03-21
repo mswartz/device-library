@@ -973,6 +973,28 @@ Home Screen
   padding: 60px 20px;
   background-color: #eeeeee;
 }
+@media (max-width: 599px) {
+  .home {
+    margin-left: -40px;
+    *zoom: 1;
+  }
+  .home:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .home > .media-block {
+    float: left;
+    padding-left: 40px;
+    width: 50%;
+  }
+  .home > .media-block:nth-of-type(2n+3) {
+    clear: left;
+  }
+  .home > .media-block.n3 {
+    clear: left;
+  }
+}
 @media (min-width: 600px) and (max-width: 899px) {
   .home {
     margin-left: -40px;
@@ -1038,6 +1060,9 @@ Home Screen
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px;
+}
+.device-img .h2 {
+  padding: 8px 0;
 }
 .device-img:hover {
   background-color: #FFF;

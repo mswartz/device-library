@@ -438,6 +438,10 @@ Home Screen
 	padding: 60px 20px;
 	background-color: $bg-color;
 
+	@media (max-width: 599px){
+		@include media-grid(2, 40px);
+	}
+
 	@media (min-width: 600px) and (max-width: 899px){
 		@include media-grid(3, 40px);
 	}
@@ -460,10 +464,12 @@ Home Screen
 	@include trans;
 	@include border-radius(8px);
 
+	.h2 {
+		padding: 8px 0;
+	}
 
 	&:hover {
 		background-color: #FFF;
-
 	}
 
 	&.out {
