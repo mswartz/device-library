@@ -627,7 +627,7 @@ Objects and Universal
   -o-border-radius: 8px;
   border-radius: 8px;
   border: 1px solid #EEE;
-  background-color: #93164f;
+  background-color: #0bad98;
   outline: none;
 }
 
@@ -670,7 +670,7 @@ Objects and Universal
   display: block;
   width: 30px;
   height: 30px;
-  background-color: #93164f;
+  background-color: #0bad98;
   background-image: url("img/x.svg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -733,6 +733,9 @@ h1, h2, h3, h4 {
   font-size: 40px;
   line-height: 0;
 }
+.logo strong {
+  font-weight: 100;
+}
 
 .detail-table {
   width: 100%;
@@ -752,7 +755,7 @@ Header
 *******************************/
 .header {
   height: 60px;
-  background-color: #1d1d1d;
+  background-color: #cccccc;
 }
 
 .logo {
@@ -800,10 +803,31 @@ Header
   float: right;
   padding: 10px;
   margin: 10px 10px 10px 0;
-  background-color: #93164f;
+  background-color: #0bad98;
   color: #FFF;
 }
 .add_device:hover {
+  background-size: 17px;
+}
+
+.show_login {
+  height: 40px;
+  width: 40px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url('img/login.png');
+  background-image: url('img/login.svg'), none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 15px;
+  text-indent: -10000px;
+  float: right;
+  padding: 10px;
+  margin: 10px 10px 10px 0;
+  background-color: #0bad98;
+  color: #FFF;
+}
+.show_login:hover {
   background-size: 17px;
 }
 
@@ -974,12 +998,6 @@ Home Screen
   -ms-border-radius: 200px;
   -o-border-radius: 200px;
   border-radius: 200px;
-}
-.device-img:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-  -webkit-box-shadow: white 0 0 40px;
-  -moz-box-shadow: white 0 0 40px;
-  box-shadow: white 0 0 40px;
 }
 
 /*******************************
