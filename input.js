@@ -29,7 +29,7 @@ var displayChange = function(){
 if (Meteor.isClient) {
     //vars for art chooser
     var i = 0;
-    var limit = 14;
+    var limit = 15;
 
   Template.device_detail.events({
     // handle individual click, convert to field
