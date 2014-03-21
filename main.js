@@ -104,7 +104,7 @@ if (Meteor.isClient) {
         Meteor.call('pushToHistory', this._id, { name: data.borrower, message: 'checked out the device.'});
       } else {
         data.checked_out = false;
-        data.borrower = null;
+        data.borrower = Devices.findOne({_id: Session.get('device_selected')}).borrower;
         buttonMsg = 'Check it out!';
         Meteor.call('pushToHistory', this._id, { name: data.borrower, message: 'brought it back.'});
       }
