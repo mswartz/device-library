@@ -924,7 +924,7 @@ Input Screen
   border-radius: 30px;
   background-color: #EEE;
   position: relative;
-  top: -155px;
+  top: -180px;
 }
 .left-arrow:hover, .right-arrow:hover {
   background-color: #CCC;
@@ -932,7 +932,7 @@ Input Screen
 
 .left-arrow {
   float: left;
-  margin-left: -15px;
+  margin-left: 20px;
   background-image: url("img/leftarrow.svg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -944,7 +944,7 @@ Input Screen
 
 .right-arrow {
   float: right;
-  margin-right: -15px;
+  margin-right: 20px;
   background-image: url("img/rightarrow.svg");
   background-repeat: no-repeat;
   background-position: center center;
