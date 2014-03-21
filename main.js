@@ -97,16 +97,14 @@ if (Meteor.isClient) {
       data = {};
 
       var buttonMsg;
-      if(this.checked_out === false) {
-        data.checked_out = true;
+      if(this.borrower === null) {
         data.borrower = $('#checkout_name').val();
         buttonMsg = 'Bring it back!';
         Meteor.call('pushToHistory', this._id, { name: data.borrower, message: 'checked out the device.'});
       } else {
-        data.checked_out = false;
-        data.borrower = Devices.findOne({_id: Session.get('device_selected')}).borrower;
+        data.borrower = null;
         buttonMsg = 'Check it out!';
-        Meteor.call('pushToHistory', this._id, { name: data.borrower, message: 'brought it back.'});
+        Meteor.call('pushToHistory', this._id, { name: Devices.findOne({_id: Session.get('device_selected')}).borrower, message: 'brought it back.'});
       }
 
       $('#checkout_submit').attr('value', buttonMsg);
