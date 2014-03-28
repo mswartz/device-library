@@ -185,28 +185,66 @@ if (Meteor.isClient) {
       displayChange();
     },
     'click #checkout_submit': function() {
-      data = {};
+      var user = Meteor.user(),
+          data = {},
+          historyData = {
+            name: user.username
+          },
+          buttonMsg;
 
-      var buttonMsg;
-      if (this.checked_out === false) {
+      if(this.checked_out === false) {
+        // the user is trying to check OUT the device
+
+        // we want to...
+        // - put their name in the history
+        // - set checked_out to true
+        // set button text var
+
         data.checked_out = true;
-        data.borrower = $('#checkout_name').val();
-        buttonMsg = 'Bring it back!';
-        Meteor.call('pushToHistory', this._id, {
-          name: data.borrower,
-          message: 'checked out the device.'
-        });
+        historyData.message = "checked out the device.";
+        buttonMsg = "Bring it back!";
+
       } else {
-        data.borrower = null;
-        buttonMsg = 'Check it out!';
-        Meteor.call('pushToHistory', this._id, {
-          name: data.borrower,
-          message: 'brought it back.'
-        });
+        // the user is trying to check IN the device
+
+        // we want to...
+        // - put their name in the history
+        // - set checked_out to false
+        // - set button text var
+
+        data.checked_out = false;
+        historyData.message = "checked in the device.";
+        buttonMsg = "Check it out!";
+
       }
 
+      Meteor.call('pushToHistory', this._id, historyData);
       $('#checkout_submit').attr('value', buttonMsg);
       Meteor.call('updateDevice', this._id, data);
+
+      // if(user === null) {
+      //   console.log('You must be logged-in to perform this action');
+      //   return;
+      // }
+
+      // if (this.checked_out === false) {
+      //   // check it out
+      //   data.checked_out = true;
+      //   buttonMsg = 'Bring it back!';
+      //   Meteor.call('pushToHistory', this._id, {
+      //     name: user.username,
+      //     message: 'checked out the device.'
+      //   });
+      //   data.borrower = user.username;
+      // } else {
+      //   // check it in
+      //   data.checked_out = false;
+      //   buttonMsg = 'Check it out!';
+      //   Meteor.call('pushToHistory', this._id, {
+      //     name: data.borrower,
+      //     message: 'brought it back.'
+      //   });
+      // }
     },
     'click #delete_device': function() {
       var response = confirm('are you sure you want to delete this?');
