@@ -581,6 +581,7 @@ Modal Styles
   max-width: 400px;
   margin: 0 auto;
   z-index: 1000;
+  padding: 40px 0;
 }
 
 .home .device-thumb-mod {
@@ -626,9 +627,9 @@ Objects and Universal
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px;
-  border: 1px solid #EEE;
-  background-color: #93164f;
+  background-color: #0bad98;
   outline: none;
+  border: 0;
 }
 
 .input {
@@ -666,11 +667,20 @@ Objects and Universal
 }
 
 .close {
+  position: absolute;
+  z-index: 1000;
   text-indent: -10000px;
   display: block;
-  width: 30px;
-  height: 30px;
-  background-color: #93164f;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  margin: -5px 0 0 -5px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background-color: #fd4325;
   background-image: url("img/x.svg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -723,8 +733,13 @@ h1, h2, h3, h4 {
 .heading {
   text-align: center;
   border-bottom: 1px solid #CCC;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  padding: 8px;
+  background-color: #dcdcdc;
+  -webkit-border-radius: 8px 8px 0 0;
+  -moz-border-radius: 8px 8px 0 0;
+  -ms-border-radius: 8px 8px 0 0;
+  -o-border-radius: 8px 8px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 
 .logo {
@@ -732,6 +747,9 @@ h1, h2, h3, h4 {
   font-weight: 100;
   font-size: 40px;
   line-height: 0;
+}
+.logo strong {
+  font-weight: 100;
 }
 
 .detail-table {
@@ -752,11 +770,11 @@ Header
 *******************************/
 .header {
   height: 60px;
-  background-color: #1d1d1d;
+  background-color: #0bad98;
 }
 
 .logo {
-  color: #666;
+  color: #FFF;
   font-size: 30px;
   width: 200px;
   padding: 30px 0 30px 10px;
@@ -782,7 +800,7 @@ Header
   margin: 10px;
   float: right;
   padding: 10px;
-  background-color: #93164f;
+  background-color: #0bad98;
   color: #FFF;
 }
 .wiki_link:hover {
@@ -800,7 +818,7 @@ Header
   float: right;
   padding: 10px;
   margin: 10px 10px 10px 0;
-  background-color: #93164f;
+  background-color: #0bad98;
   color: #FFF;
 }
 .add_device:hover {
@@ -919,6 +937,46 @@ Detail Screen
 *******************************/
 .section {
   margin: 0 0 30px 0;
+  background-color: #FFF;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: #cccccc 10px 10px 0px;
+  -moz-box-shadow: #cccccc 10px 10px 0px;
+  box-shadow: #cccccc 10px 10px 0px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.section.art {
+  background-color: #FFF;
+}
+.section.art .h1 {
+  text-align: center;
+  padding: 10px 0;
+  color: #000;
+}
+.section.warning {
+  background-color: #fd4325;
+}
+.section.warning .btn {
+  background-color: #fd4325;
+  width: 100%;
+}
+.section.warning .btn:hover {
+  background-color: #fd2d0c;
+}
+.section:hover {
+  -webkit-box-shadow: #666666 10px 10px 0px;
+  -moz-box-shadow: #666666 10px 10px 0px;
+  box-shadow: #666666 10px 10px 0px;
+}
+
+.inner {
+  padding: 10px;
 }
 
 .device-info .h1 {
@@ -928,18 +986,6 @@ Detail Screen
 .history-list li {
   padding: 10px 0;
   border-bottom: 1px solid #EEE;
-}
-
-.detail-img {
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  -ms-border-radius: 200px;
-  -o-border-radius: 200px;
-  border-radius: 200px;
-  background-color: rgba(255, 255, 255, 0.5);
-  -webkit-box-shadow: white 0 0 40px;
-  -moz-box-shadow: white 0 0 40px;
-  box-shadow: white 0 0 40px;
 }
 
 /*******************************
@@ -962,7 +1008,7 @@ Input Screen
   border-radius: 30px;
   background-color: #EEE;
   position: relative;
-  top: -155px;
+  top: -180px;
 }
 .left-arrow:hover, .right-arrow:hover {
   background-color: #CCC;
@@ -970,7 +1016,7 @@ Input Screen
 
 .left-arrow {
   float: left;
-  margin-left: -15px;
+  margin-left: 20px;
   background-image: url("img/leftarrow.svg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -982,7 +1028,7 @@ Input Screen
 
 .right-arrow {
   float: right;
-  margin-right: -15px;
+  margin-right: 20px;
   background-image: url("img/rightarrow.svg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -1011,7 +1057,7 @@ Home Screen
   padding: 60px 20px;
   background-color: #eeeeee;
 }
-@media (min-width: 600px) and (max-width: 899px) {
+@media (max-width: 599px) {
   .home {
     margin-left: -40px;
     *zoom: 1;
@@ -1033,7 +1079,7 @@ Home Screen
     clear: left;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) and (max-width: 899px) {
   .home {
     margin-left: -40px;
     *zoom: 1;
@@ -1058,6 +1104,28 @@ Home Screen
     clear: left;
   }
 }
+@media (min-width: 900px) {
+  .home {
+    margin-left: -40px;
+    *zoom: 1;
+  }
+  .home:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .home > .media-block {
+    float: left;
+    padding-left: 40px;
+    width: 25%;
+  }
+  .home > .media-block:nth-of-type(4n+5) {
+    clear: left;
+  }
+  .home > .media-block.n5 {
+    clear: left;
+  }
+}
 
 .device-thumb-mod {
   text-align: center;
@@ -1065,26 +1133,26 @@ Home Screen
   cursor: pointer;
   margin-bottom: 30px;
 }
-.device-thumb-mod.out {
-  opacity: .25;
-}
 
 .device-img {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  -ms-border-radius: 200px;
-  -o-border-radius: 200px;
-  border-radius: 200px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+.device-img .h2 {
+  padding: 8px 0;
 }
 .device-img:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-  -webkit-box-shadow: white 0 0 40px;
-  -moz-box-shadow: white 0 0 40px;
-  box-shadow: white 0 0 40px;
+  background-color: #FFF;
+}
+.device-img.out {
+  opacity: .25;
 }
 
 /*******************************

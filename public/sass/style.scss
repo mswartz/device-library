@@ -6,8 +6,11 @@ $svg-path: "/";
 $black : #1d1d1d;
 $bg-color: #EEE;
 $gray: #EEE;
-$accent: #93164F;
-$maroon-drk : #93164F;
+$accent: #0bad98;
+$alert: #fd4325;
+
+$nav : $accent;
+
 
 
 body {
@@ -49,6 +52,7 @@ Modal Styles
 	max-width: 400px;
 	margin: 0 auto;
 	z-index: 1000;
+	padding: 40px 0;
 }
 
 .home {
@@ -84,13 +88,13 @@ Objects and Universal
 
 .btn {
 	color: #FFF;
-	display: block;	
+	display: block;
 	margin: 0 auto;
 	padding: 10px;
 	@include border-radius(8px);
-	border: 1px solid #EEE;
 	background-color: $accent;
 	outline: none;
+	border: 0;
 }
 
 .input {
@@ -124,11 +128,16 @@ Objects and Universal
 }
 
 .close {
+	position: absolute;
+	z-index: 1000;
 	text-indent: -10000px;
 	display: block;
-	width: 30px;
-	height: 30px;
-	background-color: $accent;
+	@include border-radius(2px);
+	margin: -5px 0 0 -5px;
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+	background-color: $alert;
 	background-image: url("img/x.svg");
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -183,8 +192,9 @@ h1, h2, h3, h4 {
 .heading {
 	text-align: center;
 	border-bottom: 1px solid #CCC;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
+	padding: 8px;
+	background-color: #dcdcdc;
+	@include border-radius(8px 8px 0 0);
 }
 
 .logo {
@@ -192,6 +202,10 @@ h1, h2, h3, h4 {
 	font-weight: 100;
 	font-size: 40px;
 	line-height: 0;
+
+	strong {
+		font-weight: 100;
+	}
 }
 
 .detail-table {
@@ -216,11 +230,11 @@ Header
 
 .header {
 	height: 60px;
-	background-color: $black;
+	background-color: $nav;
 }
 
 .logo {
-	color: #666;
+	color: #FFF;
 	font-size: 30px;
 	width: 200px;
 	padding: 30px 0 30px 10px;
@@ -247,7 +261,7 @@ Header
 	margin: 10px;
 	float: right;
 	padding: 10px;
-	background-color: $maroon-drk;
+	background-color: $accent;
 	color: #FFF;
 
 	&:hover {
@@ -260,6 +274,63 @@ Header
 	height: 40px;
 	width: 40px;
 	background-image: url("img/add.svg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 15px;
+	text-indent: -10000px;
+	float: right;
+	padding: 10px;
+	margin: 10px 10px 10px 0;
+	background-color: $accent;
+	color: #FFF;
+
+	&:hover {
+		background-size: 17px;
+	}
+}
+
+.show_login {
+	height: 40px;
+	width: 40px;
+	@include svg("img/login", no-cover);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 15px;
+	text-indent: -10000px;
+	float: right;
+	padding: 10px;
+	margin: 10px 10px 10px 0;
+	background-color: $accent;
+	color: #FFF;
+
+	&:hover {
+		background-size: 17px;
+	}
+}
+
+.show_login {
+	height: 40px;
+	width: 40px;
+	@include svg("img/login", no-cover);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 15px;
+	text-indent: -10000px;
+	float: right;
+	padding: 10px;
+	margin: 10px 10px 10px 0;
+	background-color: $maroon-drk;
+	color: #FFF;
+
+	&:hover {
+		background-size: 17px;
+	}
+}
+
+.user_logout {
+	height: 40px;
+	width: 40px;
+	@include svg("img/logout", no-cover);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 15px;
@@ -380,6 +451,40 @@ Detail Screen
 
 .section {
 	margin: 0 0 30px 0;
+	background-color: #FFF;
+	@include border-radius(6px);
+	@include box-shadow(#CCC 10px 10px 0px);
+	@include trans;
+
+	&.art {
+		background-color: #FFF;
+
+		.h1 {
+			text-align: center;
+			padding: 10px 0;
+			color: #000;
+		}
+	}
+
+	&.warning {
+		background-color: $alert;
+		.btn {
+			background-color: $alert;
+			width: 100%;
+
+			&:hover {
+				background-color: darken($alert, 5%);
+			}
+		}
+	}
+
+	&:hover {
+		@include box-shadow(#666 10px 10px 0px);
+	}
+}
+
+.inner {
+	padding: 10px;
 }
 
 .device-info {
@@ -396,9 +501,7 @@ Detail Screen
 }
 
 .detail-img {
-	@include border-radius(200px);
-	background-color: rgba(255,255,255, .5);
-	@include box-shadow(#FFF 0 0 40px);
+
 }
 
 
@@ -419,7 +522,7 @@ Input Screen
 	@include border-radius(30px);
 	background-color: #EEE;
 	position: relative;
-	top: -155px;
+	top: -180px;
 
 	&:hover {
 		background-color: #CCC;
@@ -428,7 +531,7 @@ Input Screen
 
 .left-arrow {
 	float: left;
-	margin-left: -15px;
+	margin-left: 20px;
 
 	background-image: url("img/leftarrow.svg");
 	background-repeat: no-repeat;
@@ -442,7 +545,7 @@ Input Screen
 
 .right-arrow {
 	float: right;
-	margin-right: -15px;
+	margin-right: 20px;
 
 	background-image: url("img/rightarrow.svg");
 	background-repeat: no-repeat;
@@ -470,12 +573,16 @@ Home Screen
 	padding: 60px 20px;
 	background-color: $bg-color;
 
-	@media (min-width: 600px) and (max-width: 899px){
+	@media (max-width: 599px){
 		@include media-grid(2, 40px);
 	}
 
-	@media (min-width: 900px){
+	@media (min-width: 600px) and (max-width: 899px){
 		@include media-grid(3, 40px);
+	}
+
+	@media (min-width: 900px){
+		@include media-grid(4, 40px);
 	}
 }
 
@@ -485,19 +592,23 @@ Home Screen
 	cursor: pointer;
 	margin-bottom: 30px;
 
-	&.out {
-		opacity: .25;
-	}
+
 }
 
 .device-img {
 	@include trans;
-	@include border-radius(200px);
+	@include border-radius(8px);
 
+	.h2 {
+		padding: 8px 0;
+	}
 
 	&:hover {
-		background-color: rgba(255,255,255, .5);
-		@include box-shadow(#FFF 0 0 40px);
+		background-color: #FFF;
+	}
+
+	&.out {
+		opacity: .25;
 	}
 }
 

@@ -45,7 +45,7 @@ if (Meteor.isClient) {
       Meteor.loginWithPassword(email, password, function(err) {
         if (err) {
           // The user might not have been found, or their password
-          // could be incorrect. The login attempt has failed. 
+          // could be incorrect. The login attempt has failed.
           console.log('login error', err);
         } else {
           // The user has been logged in.
@@ -77,7 +77,7 @@ if (Meteor.isClient) {
               console.log('fail', err);
             } else {
               // Success. Account has been created and the user
-              // has logged in successfully. 
+              // has logged in successfully.
               Session.set('logged_in', true);
               console.log('user created');
               displayChange();
@@ -89,7 +89,6 @@ if (Meteor.isClient) {
         }
 
       })
-      
 
       return false;
     },
@@ -127,7 +126,7 @@ if (Meteor.isClient) {
     }
   });
 
-  // The 'homepage' list of devices 
+  // The 'homepage' list of devices
   Template.device_list.events({
     'click .device-thumb-mod': function() {
       Session.set('device_selected', this._id);
@@ -198,7 +197,6 @@ if (Meteor.isClient) {
           message: 'checked out the device.'
         });
       } else {
-        data.checked_out = false;
         data.borrower = null;
         buttonMsg = 'Check it out!';
         Meteor.call('pushToHistory', this._id, {

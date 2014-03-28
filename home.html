@@ -50,10 +50,10 @@
 
 <template name="device_thumb">
 	<div class="device-thumb-mod media-block {{status}}">
-		<div class="device-img"><img src="{{img}}"/></div>
-		<h1 class="h2">{{name}}</h1>
-		<h3 class="h3">{{os}}</h3>
-		{{#if borrower}}<small>({{borrower}}'s got it.)</small>{{/if}}
+		<div class="device-img {{#if borrower}}out{{/if}}">
+			<img src="{{img}}"/>
+			<h1 class="h2">{{name}}</h1>
+		</div>
 	</div>
 </template>
 
