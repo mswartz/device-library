@@ -198,9 +198,11 @@ if (Meteor.isClient) {
         // we want to...
         // - put their name in the history
         // - set checked_out to true
-        // set button text var
+        // - set button text var
+        // - set borrower to current user
 
         data.checked_out = true;
+        data.borrower = user.username;
         historyData.message = "checked out the device.";
         buttonMsg = "Bring it back!";
 
@@ -211,12 +213,16 @@ if (Meteor.isClient) {
         // - put their name in the history
         // - set checked_out to false
         // - set button text var
+        // - set borrower to null
 
         data.checked_out = false;
+        data.borrower = null;
         historyData.message = "checked in the device.";
         buttonMsg = "Check it out!";
 
       }
+
+      if(user.username === this.borrower)
 
       Meteor.call('pushToHistory', this._id, historyData);
       $('#checkout_submit').attr('value', buttonMsg);
