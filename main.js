@@ -187,10 +187,11 @@ if (Meteor.isClient) {
     'click #checkout_submit': function() {
       var user = Meteor.user(),
           data = {},
-          historyData = {
-            name: user.username
-          },
           buttonMsg;
+
+      var historyData = {
+        name: user.username
+      };
 
       if(this.checked_out === false) {
         // the user is trying to check OUT the device
@@ -221,8 +222,6 @@ if (Meteor.isClient) {
         buttonMsg = "Check it out!";
 
       }
-
-      if(user.username === this.borrower)
 
       Meteor.call('pushToHistory', this._id, historyData);
       $('#checkout_submit').attr('value', buttonMsg);
