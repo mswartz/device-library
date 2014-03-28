@@ -7,6 +7,7 @@ $black : #1d1d1d;
 $bg-color: #EEE;
 $gray: #EEE;
 $accent: #0bad98;
+$drkaccent: darken(#0bad98, 10%);
 $alert: #fd4325;
 
 $nav : $accent;
@@ -142,6 +143,7 @@ Objects and Universal
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 15px;
+	border: 0;
 
 	&:hover {
 		background-size: 13px;
@@ -173,6 +175,10 @@ h1, h2, h3, h4 {
 
 .h1 {
 	font-size: 26px;
+
+	&.centered {
+		text-align: center;
+	}
 }
 
 .h2 {
@@ -261,7 +267,7 @@ Header
 	margin: 10px;
 	float: right;
 	padding: 10px;
-	background-color: $accent;
+	background-color: $drkaccent;
 	color: #FFF;
 
 	&:hover {
@@ -281,7 +287,7 @@ Header
 	float: right;
 	padding: 10px;
 	margin: 10px 10px 10px 0;
-	background-color: $accent;
+	background-color: $drkaccent;
 	color: #FFF;
 
 	&:hover {
@@ -300,7 +306,7 @@ Header
 	float: right;
 	padding: 10px;
 	margin: 10px 10px 10px 0;
-	background-color: $accent;
+	background-color: $drkaccent;
 	color: #FFF;
 
 	&:hover {
@@ -319,7 +325,7 @@ Header
 	float: right;
 	padding: 10px;
 	margin: 10px 10px 10px 0;
-	background-color: $maroon-drk;
+	background-color: $drkaccent;
 	color: #FFF;
 
 	&:hover {
@@ -338,7 +344,7 @@ Header
 	float: right;
 	padding: 10px;
 	margin: 10px 10px 10px 0;
-	background-color: $maroon-drk;
+	background-color: $drkaccent;
 	color: #FFF;
 
 	&:hover {
@@ -357,7 +363,7 @@ Header
 	float: right;
 	padding: 10px;
 	margin: 10px 10px 10px 0;
-	background-color: $maroon-drk;
+	background-color: $drkaccent;
 	color: #FFF;
 
 	&:hover {
@@ -376,7 +382,7 @@ Header
 	float: right;
 	padding: 10px;
 	margin: 10px 10px 10px 0;
-	background-color: $maroon-drk;
+	background-color: $drkaccent;
 	color: #FFF;
 
 	&:hover {
@@ -387,7 +393,7 @@ Header
 .show_register {
 	height: 40px;
 	width: 40px;
-	@include svg("img/register", no-cover);
+	@include svg("img/add", no-cover);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 15px;
@@ -395,7 +401,7 @@ Header
 	float: right;
 	padding: 10px;
 	margin: 10px 10px 10px 0;
-	background-color: $maroon-drk;
+	background-color: $drkaccent;
 	color: #FFF;
 
 	&:hover {

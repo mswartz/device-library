@@ -68,41 +68,45 @@
 
 <template name="register">
 	<div class="register-form account-form">
-		<h3 class="h3">Register</h3>
+	   <input class="close" type="button" value="cancel">
+
+
+		<h3 class="h1 centered">Register</h3>
 		<form id="register-form" action="action">
 	      <div class="form-mod">
-	      	<div>name:</div>
-	       <input type="name" id="account-name" />
-	      	<div>email:</div>
-	       <input type="email" id="account-email" />
-	       <div>password:</div>
-	       <input type="password" id="account-password" />
-	       <div>registration key:</div>
-	       <input type="text" id="account-key" />
+	      	<div><h3 class="h3">name:</h3></div>
+	       <input class="input" type="name" id="account-name" />
+	      	<div><h3 class="h3">email:</h3></div>
+	       <input class="input" type="email" id="account-email" />
+	       <div><h3 class="h3">password:</h3></div>
+	       <input class="input" type="password" id="account-password" />
+	       <div><h3 class="h3">registration key:</h3></div>
+	       <input class="input" type="text" id="account-key" />
 
 	       <div class="submit-mod">
-	       	<input type="submit" id="create-account" value="Create an Account" />
+	       	<input class="btn" type="submit" id="create-account" value="Create an Account" />
 	       </div>
 	     </div>
 	   </form>
-	   <input class="close" type="button" value="cancel">
    </div>
 </template>
 
 <template name="login">
 	<div class="login-form account-form">
-		<h3 class="h3">Login</h3>
+	   <input class="close" type="button" value="cancel">
+
+
+		<h3 class="h1 centered">Login</h3>
 		<form id="login-form" action="action">
 	      <div class="form-mod">
-	        <div>username:</div>
-	        <input type="email" id="login-email" />
-	        <div>pass:</div>
-	        <input type="password" id="login-password" />
+	        <div><h3 class="h3">username:</h3></div>
+	        <input class="input" type="email" id="login-email" />
+	        <div><h3 class="h3">pass:</h3></div>
+	        <input class="input" type="password" id="login-password" />
 	        <div class="submit-mod">
-	        	<input class="submit-button" type="submit" id="login-button" value="Sign in" />
+	        	<input class="submit-button btn" type="submit" id="login-button" value="Sign in" />
 	        </div>
 	     </div>
 	   </form> 
-	   <input class="close" type="button" value="cancel">
    </div>
 </template>

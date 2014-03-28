@@ -685,6 +685,7 @@ Objects and Universal
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 15px;
+  border: 0;
 }
 .close:hover {
   background-size: 13px;
@@ -714,6 +715,9 @@ h1, h2, h3, h4 {
 
 .h1 {
   font-size: 26px;
+}
+.h1.centered {
+  text-align: center;
 }
 
 .h2 {
@@ -800,7 +804,7 @@ Header
   margin: 10px;
   float: right;
   padding: 10px;
-  background-color: #0bad98;
+  background-color: #087d6e;
   color: #FFF;
 }
 .wiki_link:hover {
@@ -818,7 +822,7 @@ Header
   float: right;
   padding: 10px;
   margin: 10px 10px 10px 0;
-  background-color: #0bad98;
+  background-color: #087d6e;
   color: #FFF;
 }
 .add_device:hover {
@@ -839,7 +843,28 @@ Header
   float: right;
   padding: 10px;
   margin: 10px 10px 10px 0;
-  background-color: #93164f;
+  background-color: #087d6e;
+  color: #FFF;
+}
+.show_login:hover {
+  background-size: 17px;
+}
+
+.show_login {
+  height: 40px;
+  width: 40px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url(/img/login.png);
+  background-image: url(/img/login.svg), none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 15px;
+  text-indent: -10000px;
+  float: right;
+  padding: 10px;
+  margin: 10px 10px 10px 0;
+  background-color: #087d6e;
   color: #FFF;
 }
 .show_login:hover {
@@ -860,7 +885,49 @@ Header
   float: right;
   padding: 10px;
   margin: 10px 10px 10px 0;
-  background-color: #93164f;
+  background-color: #087d6e;
+  color: #FFF;
+}
+.user_logout:hover {
+  background-size: 17px;
+}
+
+.show_login {
+  height: 40px;
+  width: 40px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url(/img/login.png);
+  background-image: url(/img/login.svg), none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 15px;
+  text-indent: -10000px;
+  float: right;
+  padding: 10px;
+  margin: 10px 10px 10px 0;
+  background-color: #087d6e;
+  color: #FFF;
+}
+.show_login:hover {
+  background-size: 17px;
+}
+
+.user_logout {
+  height: 40px;
+  width: 40px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url(/img/logout.png);
+  background-image: url(/img/logout.svg), none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 15px;
+  text-indent: -10000px;
+  float: right;
+  padding: 10px;
+  margin: 10px 10px 10px 0;
+  background-color: #087d6e;
   color: #FFF;
 }
 .user_logout:hover {
@@ -872,8 +939,8 @@ Header
   width: 40px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url(/img/register.png);
-  background-image: url(/img/register.svg), none;
+  background-image: url(/img/add.png);
+  background-image: url(/img/add.svg), none;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 15px;
@@ -881,7 +948,7 @@ Header
   float: right;
   padding: 10px;
   margin: 10px 10px 10px 0;
-  background-color: #93164f;
+  background-color: #087d6e;
   color: #FFF;
 }
 .show_register:hover {

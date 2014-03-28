@@ -41,7 +41,7 @@
 		</div><!-- inner -->
 	</div>
 
-
+	{{#if currentUser }}
 	<div class="device-checkout section">
 		<h3 class="h3 heading">Checkout center</h3>
 
@@ -52,11 +52,10 @@
 		</div>
 
 		<div class="inner">
-			{{#if currentUser }}
 				<input id="checkout_submit" class="btn" type="submit" value="{{#if checked_out}}Bring it back!{{else}}Check it out!{{/if}}"/>
-			{{/if}}
 		</div><!-- inner -->
 	</div>
+	{{/if}}
 
 	<div class="device-history section">
 		<h3 class="h3 heading">Activity</h3>
